@@ -1,6 +1,7 @@
 package cg.rbns.majitechnologie.directcash.airtel;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,7 +16,7 @@ import cg.rbns.majitechnologie.directcash.R;
 
 public class AirtelActivity extends AppCompatActivity {
     private EditText destinataire, montant, confirm_destinataire;
-    private Button btn_validate, btn_cancel;
+    private AppCompatButton btn_validate, btn_cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class AirtelActivity extends AppCompatActivity {
         destinataire = findViewById(R.id.airte_tel_destinataire);
         confirm_destinataire = findViewById(R.id.airtel_confirm_tel_destination);
         montant = findViewById(R.id.airtel_tel_prix);
-        btn_validate = findViewById(R.id.btn_airtel_validate);
+        btn_validate = findViewById(R.id.btn_airtel_v);
         btn_cancel = findViewById(R.id.btn_airtel_cancel);
 
         //Send Airtel
@@ -37,20 +38,20 @@ public class AirtelActivity extends AppCompatActivity {
                 String my_confirm_dest = confirm_destinataire.getText().toString().trim();
                 String my_montant = montant.getText().toString().trim();
                 int nb = Integer.parseInt(my_montant);
-                if (nb > 49) {
-                    if (my_dest.equals(my_confirm_dest)) {
-                        if (my_confirm_dest.length() < 8){
-                            send_sms(nb, my_confirm_dest);
-                        }
+                if (!my_montant.isEmpty()){
+                    if ((my_confirm_dest.equals(my_dest)) && (nb > 49)){
+                        send_sms(nb, my_confirm_dest);
                     } else {
                         Toast.makeText(AirtelActivity.this, "Veuillez verifier le numero du destinaire", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(AirtelActivity.this, "Veuillez saisir un montant superieur ou egal à 50 Fcfa", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AirtelActivity.this, "Veuillez renseigner un montant à envoyer", Toast.LENGTH_SHORT).show();
                 }
+                
             }
         });
 
+        // Back to home
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
