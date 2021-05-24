@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Direct Cash</string>
+    <string name="transf_rez_directement_de_l_argent_d_un_r_seau_un_autre">Transférez directement de l\'argent d\'un réseau à un autre</string>
+    <string name="exit_to_app">Double retour pour sortir</string>
+    <string name="zero_frais">Opération facturée aux frais habituels des opérateurs.</string>
+    <string name="valider">Valider</string>
+    <string name="annuler">Annuler</string>
+    <string name="srv_airtel">00242053650000</string>
+    <string name="srv_mtn">00242066250000</string>
+</resources>
