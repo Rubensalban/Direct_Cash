@@ -2,10 +2,13 @@ package cg.rbns.majitechnologie.directcash;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +25,7 @@ import cg.rbns.majitechnologie.directcash.mtn.MtnActivity;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton btn_airtel, btn_mtn, btn_send_to;
+    private ImageButton btn_mtn_solde, btn_airtel_solde;
     private boolean singleBack = false;
     private EditText desti;
     private TelephonyManager telephonyManager;
@@ -36,10 +40,28 @@ public class MainActivity extends AppCompatActivity {
         btn_mtn = findViewById(R.id.btn_mtn_to_airtel);
         btn_send_to = findViewById(R.id.btn_send_to_other);
         desti = findViewById(R.id.tel_destinataire);
+        btn_mtn_solde = findViewById(R.id.btn_solde_mtn);
+        btn_airtel_solde = findViewById(R.id.btn_solde_airtel);
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
-        //Operator
+        //Operator Init
         String my_operator = telephonyManager.getSimOperatorName();
+
+        //Solde Mtn
+        btn_mtn_solde.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                get_solde_mtn();
+            }
+        });
+
+        //Solde Airtel
+        btn_airtel_solde.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                get_solde_airtel();
+            }
+        });
 
         //Start Airtel
         btn_airtel.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
                 final EditText edt = (EditText) dialogView.findViewById(R.id.tel_destinataire);
 
-                dialogBuilder.setTitle("Destinataire");
-                dialogBuilder.setPositiveButton("Valider", new DialogInterface.OnClickListener() {
+                dialogBuilder.setTitle("Partagez à un amis");
+                dialogBuilder.setPositiveButton(getString(R.string.valider), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         String dest = edt.getText().toString();
                         if (!dest.isEmpty()){
@@ -94,11 +116,11 @@ public class MainActivity extends AppCompatActivity {
                                 sendto(dest, my_operator);
                             }
                         } else {
-                            Toast.makeText(MainActivity.this, "Veuillez renseinger un numero de téléphone", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, getString(R.string.svp_number), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-                dialogBuilder.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                dialogBuilder.setNegativeButton(getString(R.string.annuler), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         dialog.dismiss();
                     }
@@ -108,6 +130,51 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void get_solde_airtel() {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.CALL_PHONE}, 1);
+        } else {
+            String ussdCode = "*128*7*2#";
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(ussdToCallUri(ussdCode));
+            try {
+                startActivity(intent);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    private void get_solde_mtn() {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.CALL_PHONE}, 1);
+        } else {
+            String ussdCode = "*105#";
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(ussdToCallUri(ussdCode));
+            try {
+                startActivity(intent);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    private Uri ussdToCallUri(String ussdCode) {
+        StringBuilder uriString = new StringBuilder();
+        if (!ussdCode.startsWith("tel:"))
+            uriString.append("tel:");
+        for (char c : ussdCode.toCharArray()){
+            if (c == '#')
+                uriString.append(Uri.encode("#"));
+            else
+                uriString.append(c);
+        }
+        return Uri.parse(uriString.toString());
     }
 
     private void sendto(String dest, String my_operator) {
@@ -126,8 +193,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
 
     @Override
     public void onBackPressed() {

@@ -36,16 +36,26 @@ public class AirtelActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String my_dest = destinataire.getText().toString().trim();
                 String my_confirm_dest = confirm_destinataire.getText().toString().trim();
-                String my_montant = montant.getText().toString().trim();
-                int nb = Integer.parseInt(my_montant);
+                String my_montant = montant.getText().toString();
                 if (!my_montant.isEmpty()){
-                    if ((my_confirm_dest.equals(my_dest)) && (nb > 49)){
+                    if (my_confirm_dest.equals(my_dest)){
+                        int nb = Integer.parseInt(my_montant);
                         send_sms(nb, my_confirm_dest);
                     } else {
-                        Toast.makeText(AirtelActivity.this, "Veuillez verifier le numero du destinaire", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AirtelActivity.this, getString(R.string.identik_destinataire), Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(AirtelActivity.this, "Veuillez renseigner un montant à envoyer", Toast.LENGTH_SHORT).show();
+                }
+                if (my_dest.isEmpty()){
+                    destinataire.setFocusable(true);
+                    destinataire.setError(getString(R.string.renseiger_destinaire));
+                }
+                if (my_confirm_dest.isEmpty()){
+                    confirm_destinataire.setFocusable(true);
+                    confirm_destinataire.setError(getString(R.string.confim_renseiger_destinaire));
+                }
+                if (my_montant.isEmpty()){
+                    montant.setFocusable(true);
+                    montant.setError(getString(R.string.svp_montant));
                 }
                 
             }
