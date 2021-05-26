@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Direct Cash</string>
+    <string name="app_name">Direct Cash in</string>
     <string name="transf_rez_directement_de_l_argent_d_un_r_seau_un_autre">Transfert Mobile money d\'un réseau vers un autre !</string>
     <string name="exit_to_app">Double retour pour sortir</string>
     <string name="zero_frais">Opération facturée aux frais habituels des opérateurs.</string>

@@ -61,15 +61,13 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
                             Log.w(TAG, "Fetching FCM registration token failed", task.getException());
                             return;
                         }
-                        // Get new FCM registration token
                         String token = task.getResult();
-                        // Log and toast
                         String msg = "Done";
                         Log.d(TAG, msg);
                     }
                 });
 
-        //Upgrade App
+        //Update Verification
         UpdateHelper.with(this)
                 .onUpdateCheck(this)
                 .check();
@@ -124,9 +122,7 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
 
                 final View dialogView = inflater.inflate(R.layout.custom_dialog, null);
                 dialogBuilder.setView(dialogView);
-
                 final EditText edt = (EditText) dialogView.findViewById(R.id.tel_destinataire);
-
                 dialogBuilder.setTitle("Partagez à un amis");
                 dialogBuilder.setPositiveButton(getString(R.string.valider), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
