@@ -14,4 +14,7 @@
     <string name="svp_montant">Veuillez renseigner un montant à envoyer</string>
     <string name="msg_token_fmt">Messaging</string>
     <string name="msg_error">Numéro de téléphone invalide</string>
+    <string name="new_version">Nouvelle version disponible</string>
+    <string name="new_disponible">Veuillez mettre à jour la nouvelle version pour continuer à utiliser l\'application</string>
+    <string name="update">Mettre à jour</string>
 </resources>

@@ -27,8 +27,9 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import cg.rbns.majitechnologie.directcash.airtel.AirtelActivity;
 import cg.rbns.majitechnologie.directcash.mtn.MtnActivity;
+import cg.rbns.majitechnologie.directcash.upgrade.UpdateHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUpdateCheckListener {
 
     private ImageButton btn_airtel, btn_mtn, btn_send_to;
     private ImageButton btn_mtn_solde, btn_airtel_solde;
@@ -67,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, msg);
                     }
                 });
+
+        //Upgrade App
+        UpdateHelper.with(this)
+                .onUpdateCheck(this)
+                .check();
+
 
         //Operator Init
         String my_operator = telephonyManager.getSimOperatorName();
@@ -235,5 +242,26 @@ public class MainActivity extends AppCompatActivity {
                 singleBack = false;
             }
         }, 2000);
+    }
+
+    @Override
+    public void onUpdateCheckListener(String urlApp) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.new_version))
+                .setMessage(getString(R.string.new_disponible))
+                .setPositiveButton(getString(R.string.update), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlApp));
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create();
+        alertDialog.show();
     }
 }
