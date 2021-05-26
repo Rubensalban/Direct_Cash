@@ -7,9 +7,11 @@
     <string name="valider">Valider</string>
     <string name="annuler">Annuler</string>
     <string name="service_client">Service client: 06 400 4646 | 05 065 4444</string>
-    <string name="svp_number">Veuillez nous indiquer un numéro de téléphone</string>
+    <string name="svp_number">Veuillez indiquer un numéro de téléphone</string>
     <string name="renseiger_destinaire">Veuillez renseigner un destinataire</string>
     <string name="identik_destinataire">Vérifier et renseigner le même destinataire</string>
     <string name="confim_renseiger_destinaire">Veuillez confirmer le numéro du destinataire</string>
     <string name="svp_montant">Veuillez renseigner un montant à envoyer</string>
+    <string name="msg_token_fmt">Messaging</string>
+    <string name="msg_error">Numéro de téléphone invalide</string>
 </resources>

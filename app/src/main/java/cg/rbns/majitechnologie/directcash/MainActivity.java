@@ -1,5 +1,6 @@
 package cg.rbns.majitechnologie.directcash;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -13,11 +14,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import cg.rbns.majitechnologie.directcash.airtel.AirtelActivity;
 import cg.rbns.majitechnologie.directcash.mtn.MtnActivity;
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean singleBack = false;
     private EditText desti;
     private TelephonyManager telephonyManager;
+    private String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,23 @@ public class MainActivity extends AppCompatActivity {
         btn_mtn_solde = findViewById(R.id.btn_solde_mtn);
         btn_airtel_solde = findViewById(R.id.btn_solde_airtel);
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
+        //Firebase Messaging
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        String token = task.getResult();
+                        // Log and toast
+                        String msg = "Done";
+                        Log.d(TAG, msg);
+                    }
+                });
 
         //Operator Init
         String my_operator = telephonyManager.getSimOperatorName();
@@ -90,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
                 LayoutInflater inflater = getLayoutInflater();
+
                 final View dialogView = inflater.inflate(R.layout.custom_dialog, null);
                 dialogBuilder.setView(dialogView);
 
@@ -127,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
                 });
                 AlertDialog b = dialogBuilder.create();
                 b.show();
-
             }
         });
     }
@@ -178,20 +202,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendto(String dest, String my_operator) {
-        if (my_operator.equals("MTN-CG")){
-            String result =  "info*" + dest;
-            Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_mtn));
-            Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
-            sms_intent.putExtra("sms_body", result);
-            startActivity(sms_intent);
+        if (dest.length() < 9) {
+            Toast.makeText(MainActivity.this, getString(R.string.msg_error), Toast.LENGTH_SHORT).show();
         } else {
-            String result =  "info*" + dest;
-            Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_airtel));
-            Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
-            sms_intent.putExtra("sms_body", result);
-            startActivity(sms_intent);
+            if (my_operator.equals("MTN-CG")){
+                String result =  "info*" + dest;
+                Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_mtn));
+                Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
+                sms_intent.putExtra("sms_body", result);
+                startActivity(sms_intent);
+            } else {
+                String result =  "info*" + dest;
+                Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_airtel));
+                Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
+                sms_intent.putExtra("sms_body", result);
+                startActivity(sms_intent);
+            }
         }
-
     }
 
     @Override

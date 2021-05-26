@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "788187479576",
+    "project_id": "direct-cash-206a0",
+    "storage_bucket": "direct-cash-206a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788187479576:android:b9f58d386ec3cda9284d6d",
+        "android_client_info": {
+          "package_name": "cg.rbns.majitechnologie.directcash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788187479576-rl4h3hvi7mp30d821nvoraaift15ku4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9W5W6S5O6FPWbc2Gnfy0BpgW7uGUggZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788187479576-rl4h3hvi7mp30d821nvoraaift15ku4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
