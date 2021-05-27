@@ -17,4 +17,7 @@
     <string name="new_version">Nouvelle version disponible</string>
     <string name="new_disponible">Veuillez mettre à jour la nouvelle version pour continuer à utiliser l\'application</string>
     <string name="update">Mettre à jour</string>
+    <string name="verify_desti">Echec, verifier le numéro du destinataire</string>
+    <string name="verify_mtn">Echec, veuillez renseinger un destinataire MTN</string>
+    <string name="verify_montant">Echec, veuillez renseinger un montant superieur ou egal 50 CFA</string>
 </resources>
