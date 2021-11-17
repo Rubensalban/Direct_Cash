@@ -49,7 +49,6 @@ public class UpdateHelper {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
         return result;
     }
 
@@ -73,7 +72,6 @@ public class UpdateHelper {
         public UpdateHelper check(){
             UpdateHelper updateHelper = build();
             updateHelper.check();
-
             return updateHelper;
         }
     }

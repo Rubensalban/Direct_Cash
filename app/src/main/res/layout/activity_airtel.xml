@@ -156,6 +156,7 @@
                     app:srcCompat="@drawable/icon_tel" />
 
                 <customfonts.MyTextView_Regular
+                    android:id="@+id/text_airtel"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginStart="5dp"

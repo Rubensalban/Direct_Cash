@@ -17,6 +17,8 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -58,12 +60,12 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
                     @Override
                     public void onComplete(@NonNull Task<String> task) {
                         if (!task.isSuccessful()) {
-                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            //Log.w(TAG, "Fetching FCM registration token failed", task.getException());
                             return;
                         }
-                        String token = task.getResult();
+                        /*String token = task.getResult();
                         String msg = "Done";
-                        Log.d(TAG, msg);
+                        Log.d(TAG, msg);*/
                     }
                 });
 
