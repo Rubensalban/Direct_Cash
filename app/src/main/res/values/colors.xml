@@ -13,5 +13,7 @@
     <color name="bg_color">#F3F3F3</color>
     <color name="grey_20">#cccccc</color>
     <color name="text">#7C7C7C</color>
+    <color name="yellow">#FCCC1C</color>
+    <color name="red">#E3252A</color>
     <color name="overlay_dark_50">#80000000</color>
 </resources>

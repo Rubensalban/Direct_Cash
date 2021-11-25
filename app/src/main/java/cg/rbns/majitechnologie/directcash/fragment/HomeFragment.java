@@ -1,5 +1,7 @@
 package cg.rbns.majitechnologie.directcash.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,8 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.text.Format;
+
 import cg.rbns.majitechnologie.directcash.R;
-import cg.rbns.majitechnologie.directcash.layouts.ForfaitsActivity;
+import cg.rbns.majitechnologie.directcash.layouts.ForfaitsAirtelActivity;
+import cg.rbns.majitechnologie.directcash.layouts.ForfaitsMtnActivity;
 import cg.rbns.majitechnologie.directcash.layouts.MoneyShareActivity;
 import cg.rbns.majitechnologie.directcash.layouts.SoldeActivity;
 import cg.rbns.majitechnologie.directcash.layouts.TransProActivity;
@@ -19,6 +24,7 @@ import cg.rbns.majitechnologie.directcash.layouts.TransProActivity;
 public class HomeFragment extends Fragment {
 
     private CardView card_trans, card_transpro, card_solde, card_forfaits;
+    private int checkedItem;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -61,8 +67,28 @@ public class HomeFragment extends Fragment {
         card_forfaits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i_net = new Intent(getActivity(), ForfaitsActivity.class);
-                startActivity(i_net);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                String[] items = {getString(R.string.airtel_activation), getString(R.string.mtn_activation)};
+                alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                Intent i = new Intent(getActivity(), ForfaitsAirtelActivity.class);
+                                startActivity(i);
+                                dialog.dismiss();
+                                break;
+                            case 1:
+                                Intent io = new Intent(getActivity(), ForfaitsMtnActivity.class);
+                                startActivity(io);
+                                dialog.dismiss();
+                                break;
+                        }
+                    }
+                });
+                AlertDialog alert = alertDialog.create();
+                alert.setCanceledOnTouchOutside(false);
+                alert.show();
             }
         });
 

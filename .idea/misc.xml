@@ -9,7 +9,9 @@
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/drawable/btn_green.xml" value="0.2203125" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/drawable/mtn_btn.xml" value="0.18076923076923077" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_airtel.xml" value="0.1" />
-        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_forfaits.xml" value="0.15598290598290598" />
+        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_forfaits.xml" value="0.20416666666666666" />
+        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_forfaits_airtel.xml" value="0.33" />
+        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_forfaits_mtn.xml" value="0.33" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_main.xml" value="0.1675213675213675" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_money_share.xml" value="0.33" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/activity_mtn.xml" value="0.1" />
@@ -18,6 +20,9 @@
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/custom_dialog.xml" value="0.1" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/fragment_service_client.xml" value="0.25" />
+        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/item_forfait.xml" value="0.5" />
+        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/item_forfait_mtn.xml" value="0.20416666666666666" />
+        <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/row_forfait.xml" value="0.20416666666666666" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/layout/toolbar.xml" value="0.1675213675213675" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/JOBS/MAJI TECHNOLOGIES/APP/DirectCash/app/src/main/res/menu/menu.xml" value="0.1" />
