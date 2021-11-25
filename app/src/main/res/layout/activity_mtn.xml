@@ -13,8 +13,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/logo" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -24,8 +23,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:scaleType="fitXY"
-        android:layout_below="@id/imageView"
-        app:srcCompat="@drawable/separator_line" />
+        android:layout_below="@id/imageView" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -35,7 +33,7 @@
         android:layout_below="@id/imageView2"
         app:srcCompat="@drawable/network_icon2" />
 
-    <customfonts.MyTextView_Bold
+    <TextView
         android:id="@+id/myTextView_Regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -119,7 +117,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <customfonts.MyButton_Bold
+                <Button
                     android:id="@+id/btn_mtn_v"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
@@ -130,7 +128,7 @@
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
-                <customfonts.MyButton_Bold
+                <Button
                     android:id="@+id/btn_mtn_cancel"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
@@ -152,10 +150,9 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginEnd="5dp"
-                    app:srcCompat="@drawable/icon_tel" />
+                    android:layout_marginEnd="5dp" />
 
-                <customfonts.MyTextView_Regular
+                <TextView
                     android:id="@+id/text_mtn"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
@@ -177,8 +174,7 @@
         android:layout_height="25dp"
         android:layout_marginBottom="5dp"
         android:background="@color/white"
-        android:layout_alignParentBottom="true"
-        app:srcCompat="@drawable/maji_logo"/>
+        android:layout_alignParentBottom="true"/>
 
 
 </RelativeLayout>

@@ -3,115 +3,29 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     tools:context=".MainActivity"
+    android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
-        android:id="@+id/header"
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:scaleType="fitXY"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/header" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/navigation"
+        android:animateLayoutChanges="true" />
 
-    <ImageButton
-        android:id="@+id/btn_send_to_other"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/icon_shared" />
-
-    <ScrollView
-        android:layout_below="@id/header"
-        android:layout_above="@id/footer"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:orientation="vertical">
-
-            <customfonts.MyTextView_Bold
-                android:id="@+id/my_text_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/transf_rez_directement_de_l_argent_d_un_r_seau_un_autre"
-                android:textAlignment="center"
-                android:textColor="@color/black_acsent"
-                android:textSize="12sp"
-                tools:ignore="RtlCompat" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/btn_solde_mtn"
-                    android:layout_width="150dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="5dp"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/momo_btn_icon"
-                    android:background="@color/white"
-                    android:foreground="?attr/selectableItemBackgroundBorderless" />
-
-                <ImageButton
-                    android:id="@+id/btn_solde_airtel"
-                    android:layout_width="150dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="5dp"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/airtel_btn_icon"
-                    android:background="@color/white"
-                    android:foreground="?attr/selectableItemBackgroundBorderless" />
-            </LinearLayout>
-
-            <ImageButton
-                android:id="@+id/btn_mtn_to_airtel"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/mtn_airtel" />
-
-            <ImageButton
-                android:id="@+id/btn_airtel_to_mtn"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/white"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/airtel_mtn" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <ImageView
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:srcCompat="@drawable/maji_logo" />
+        android:background="?android:attr/windowBackground"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/main"/>
+
 </RelativeLayout>

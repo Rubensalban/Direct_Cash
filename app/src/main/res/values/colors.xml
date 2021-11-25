@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#C2D02B</color>
-    <color name="purple_500">#C2D02B</color>
+    <color name="purple_500">#73AE44</color>
     <color name="purple_700">#73AE44</color>
     <color name="teal_200">#C2D02B</color>
     <color name="teal_700">#73AE44</color>
@@ -10,4 +10,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey_10">#ffe6e6e6</color>
     <color name="grey_80">#ff37474f</color>
+    <color name="bg_color">#F3F3F3</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="text">#7C7C7C</color>
+    <color name="overlay_dark_50">#80000000</color>
 </resources>

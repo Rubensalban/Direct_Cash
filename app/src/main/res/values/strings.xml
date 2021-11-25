@@ -22,4 +22,21 @@
     <string name="verify_mtn">Echec, veuillez renseinger un destinataire MTN</string>
     <string name="verify_airtel">Echec, veuillez renseinger un destinataire AIRTEL</string>
     <string name="verify_montant">Echec, veuillez renseinger un montant superieur ou egal 50 CFA</string>
+    <string name="livraison_de_virtuel"><![CDATA[Livraison de Virtuel & espèces]]></string>
+    <string name="trans_pro">Trans Pro \n(Transferts de proxipité)</string>
+    <string name="transferts_inter">Transferts inter-réseaux par Mobile Money</string>
+    <string name="mon_solde">Consulter mon solde</string>
+    <string name="activation_de_forfaits">Activation de forfaits</string>
+    <string name="a_propos">A propos</string>
+    <string name="partager_via">Partager via...</string>
+    <string name="partager_par_message_prive">Partager par message privé</string>
+    <string name="transferts_intr_reseaux">Transferts inter-réseaux</string>
+    <string name="operations_factures_aux_frais">Opérations facturées aux frais habituels des opérateurs</string>
+    <string name="destinataire_phone">Taper le numéro de téléphone du destinataire</string>
+    <string name="confirm_destinataire_phone">Confirmer le numéro de téléphone du destinataire</string>
+    <string name="price_send_phone">Taper le montant à envoyer</string>
+    <string name="direct_seb_text">Direct Cash in vous permet de transfere directement de l\'argent par Mobile Money d\'un réseau à un autre depuis votre mobile et sans vous deplacer.</string>
+    <string name="direct_sub_text_2">Avant de cliquer sun le button valider, assurez-vous que les num\"ros saisis sont corrects. \nEn cas d\'erreur de numéro, nous ne pourrons être tenu responsable.</string>
+    <string name="trans_pro_head">Trans Pro</string>
+    <string name="transfert_money">Transferts de proximité</string>
 </resources>

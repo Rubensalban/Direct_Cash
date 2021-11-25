@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/background_color"
+    tools:context=".layouts.MoneyShareActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_header"
+        android:background="@color/purple_700">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:tint="@color/black_acsent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="@dimen/_15dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_direct" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transferts_intr_reseaux"
+                android:fontFamily="@font/myriadpro_bold"
+                android:textColor="@color/purple_700"
+                android:textSize="@dimen/header"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/operations_factures_aux_frais"
+                android:fontFamily="@font/dinpro_regular"
+                android:textAlignment="center"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:layout_marginBottom="@dimen/_5dp">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10dp">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/appCompatSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/ic_phone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/appCompatSpinner" />
+
+                            <EditText
+                                android:id="@+id/editTextNumberDecimal"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:hint="@string/destinataire_phone"
+                                android:inputType="numberDecimal"
+                                android:maxLength="9"
+                                android:maxLines="1"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                                app:layout_constraintStart_toEndOf="@+id/appCompatSpinner"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="10dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_contact"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/editTextNumberDecimal2"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:ems="10"
+                                android:hint="@string/price_send_phone"
+                                android:inputType="numberDecimal"
+                                android:maxLength="9"
+                                android:maxLines="1"
+                                app:layout_constraintStart_toEndOf="@+id/appCompatSpinner"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+                            <EditText
+                                android:id="@+id/editTextNumberDecimal3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:hint="@string/confirm_destinataire_phone"
+                                android:inputType="numberDecimal"
+                                android:maxLength="9"
+                                android:maxLines="1"
+                                app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                                app:layout_constraintStart_toEndOf="@+id/appCompatSpinner"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:scaleType="centerInside"
+                                app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal3"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal3"
+                                app:srcCompat="@drawable/ic_contact" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:layout_marginBottom="@dimen/_20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:layout_marginEnd="@dimen/_5dp"
+                                android:text="@string/direct_seb_text"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/dinpro_medium"/>
+                            <TextView
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:layout_marginEnd="@dimen/_5dp"
+                                android:text="@string/direct_sub_text_2"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/dinpro_medium"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/_5dp"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5dp"
+                    android:text="Valider"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_green"
+                    android:fontFamily="@font/dinpro_regular"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:background="@drawable/btn_black"
+                    android:text="Anuler"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/dinpro_regular"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
