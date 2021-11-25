@@ -195,12 +195,13 @@ public class ForfaitsAirtelActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         back_to_preview();
+        super.onBackPressed();
     }
 
     private void back_to_preview() {
         Intent i = new Intent(ForfaitsAirtelActivity.this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }

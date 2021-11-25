@@ -26,6 +26,7 @@
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
         android:fitsSystemWindows="true"
+        android:theme="@style/Widget.BottomNavigationView"
         app:menu="@menu/main"/>
 
 </RelativeLayout>

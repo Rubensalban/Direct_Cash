@@ -37,7 +37,7 @@ public class SoldeActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                back_layout();
+                back_to_preview();
             }
         });
 
@@ -63,12 +63,13 @@ public class SoldeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        back_to_preview();
         super.onBackPressed();
-        back_layout();
     }
 
-    private void back_layout() {
+    private void back_to_preview() {
         Intent i = new Intent(SoldeActivity.this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }

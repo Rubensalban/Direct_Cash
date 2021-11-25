@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
     private String TAG;
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
+    String my_operator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         bottomNavigationView = findViewById(R.id.navigation);
         toolbar = findViewById(R.id.toolbar);
+
+        //Operator Init
+        my_operator = telephonyManager.getSimOperatorName();
 
 
         // Load Default Fragment
@@ -72,10 +77,10 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.navigation_share){
+                    sms_share();
                     return true;
                 } else if (id == R.id.navigation_share_link){
-                    return true;
-                } else if (id == R.id.navigation_about){
+                    playstore_share();
                     return true;
                 }
                 return true;
@@ -122,6 +127,61 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
 
     }
 
+    private void playstore_share() {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+            String shareMessage= "Permettez-moi de vous recommander cette application\n";
+            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+            startActivity(Intent.createChooser(shareIntent, "choisissez-en un"));
+        } catch(Exception e) {
+            //e.toString();
+        }
+    }
+
+    private void sms_share() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+
+        final View dialogView = inflater.inflate(R.layout.custom_dialog, null);
+        dialogBuilder.setView(dialogView);
+        final EditText edt = (EditText) dialogView.findViewById(R.id.tel_destinataire);
+        dialogBuilder.setTitle("Partagez à un amis");
+        dialogBuilder.setPositiveButton(getString(R.string.valider), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String dest = edt.getText().toString();
+                if (!dest.isEmpty()){
+                    String firstFourChars = "";
+                    if (dest.length() > 2) {
+                        firstFourChars = dest.substring(0, 2);
+                    } else {
+                        firstFourChars = dest;
+                    }
+                    if (firstFourChars.equals("06")){
+                        sendto(dest, my_operator);
+                    }
+                    if (firstFourChars.equals("05")){
+                        sendto(dest, my_operator);
+                    }
+                    if (firstFourChars.equals("04")){
+                        sendto(dest, my_operator);
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, getString(R.string.svp_number), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        dialogBuilder.setNegativeButton(getString(R.string.annuler), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog b = dialogBuilder.create();
+        b.show();
+    }
+
     public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, fragment);
@@ -154,18 +214,18 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
 
     @Override
     public void onBackPressed() {
-        if (singleBack) {
-            super.onBackPressed();
-            return;
-        }
-        this.singleBack = true;
-        Toast.makeText(this, getString(R.string.exit_to_app), Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                singleBack = false;
-            }
-        }, 2000);
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.exit_verify))
+                .setMessage(getString(R.string.exit_msg))
+                .setPositiveButton(getString(R.string.exit_yes), new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.this.finish();
+                        System.exit(0);
+                    }
+                })
+                .setNegativeButton(getString(R.string.exit_no), null)
+                .show();
     }
 
     @Override

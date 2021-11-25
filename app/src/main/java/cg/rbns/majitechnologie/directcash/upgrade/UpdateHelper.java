@@ -6,11 +6,13 @@ import android.text.TextUtils;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
+import cg.rbns.majitechnologie.directcash.BuildConfig;
+
 public class UpdateHelper {
 
     public static String KEY_UPDATE_ENABLE = "is_update";
-    public static String KEY_UPDATE_VERSION = "version";
-    public static String KEY_UPDATE_URL = "update_url";
+    public static String KEY_UPDATE_VERSION = "2.0";
+    public static String KEY_UPDATE_URL = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;;
 
     public interface OnUpdateCheckListener{
         void onUpdateCheckListener(String urlApp);

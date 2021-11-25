@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:icon="@drawable/ic_action_share_sms"
         android:id="@+id/navigation_share"
+        app:showAsAction="withText"
         android:title="@string/partager_par_message_prive"/>
     <item
         android:icon="@drawable/ic_action_share"
         android:id="@+id/navigation_share_link"
+        app:showAsAction="withText"
         android:title="@string/partager_via"/>
-    <item
-        android:icon="@drawable/ic_action_about"
-        android:id="@+id/navigation_about"
-        android:title="@string/a_propos"/>
 </menu>

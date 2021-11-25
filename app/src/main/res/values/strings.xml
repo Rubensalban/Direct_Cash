@@ -3,7 +3,7 @@
     <string name="transf_rez_directement_de_l_argent_d_un_r_seau_un_autre">Transfert Mobile money d\'un réseau vers un autre !</string>
     <string name="exit_to_app">Double retour pour sortir</string>
     <string name="zero_frais">Opération facturée aux frais habituels des opérateurs.</string>
-    <string name="valider">Valider</string>
+    <string name="valider">Partager</string>
     <string name="annuler">Annuler</string>
     <string name="srv_airtel">00242053650000</string>
     <string name="srv_mtn">00242065250000</string>
@@ -43,4 +43,8 @@
     <string name="mtn"><font fgcolor='#FCCC1C'> MTN</font></string>
     <string name="airtel_activation">Activation sur Airtel</string>
     <string name="mtn_activation">Activation sur Mtn</string>
+    <string name="exit_no">non</string>
+    <string name="exit_yes">oui</string>
+    <string name="exit_verify">Êtes-vous sûr?</string>
+    <string name="exit_msg">Voulez-vous quitter l\'application</string>
 </resources>

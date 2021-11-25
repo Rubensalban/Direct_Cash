@@ -16,4 +16,9 @@
         <item name="text_color">@color/white</item>
         <item name="text_color_hint">@color/overlay_dark_50</item>
     </style>
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/dinpro_medium</item>
+    </style>
+
 </resources>
