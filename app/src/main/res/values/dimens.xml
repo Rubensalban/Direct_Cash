@@ -5,6 +5,7 @@
     <dimen name="card_size">180dp</dimen>
     <dimen name="text_main">12sp</dimen>
     <dimen name="text_spinner">14sp</dimen>
+    <dimen name="text_header">18sp</dimen>
     <dimen name="text_sub_main">8sp</dimen>
     <dimen name="text_item1">14sp</dimen>
     <dimen name="text_item2">12sp</dimen>
@@ -16,4 +17,5 @@
     <dimen name="header">22sp</dimen>
     <dimen name="icon_phone">28dp</dimen>
     <dimen name="header_main">120dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
 </resources>

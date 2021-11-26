@@ -16,11 +16,12 @@
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_back"
-            android:layout_marginTop="@dimen/_10dp"
-            android:layout_marginStart="@dimen/_10dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="?actionBarItemBackground"
+            android:src="@drawable/ic_back"
             app:tint="@color/black_acsent" />
 
 
@@ -91,7 +92,7 @@
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/trans_spinner"
-                                android:layout_width="100dp"
+                                android:layout_width="160dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -107,21 +108,72 @@
                                 app:layout_constraintTop_toBottomOf="@+id/trans_spinner" />
 
                             <EditText
-                                android:id="@+id/trans_name"
+                                android:id="@+id/transport_name"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
                                 android:ems="10"
-                                android:hint="@string/destinataire_phone"
+                                android:hint="@string/transport_name"
                                 android:inputType="textPersonName"
                                 android:maxLines="1"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/trans_spinner"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="@+id/trans_spinner" />
+
+                            <EditText
+                                android:id="@+id/transport_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/transport_adrress"
+                                android:inputType="text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/transport_name"
+                                app:layout_constraintTop_toBottomOf="@+id/transport_name" />
+
+                            <EditText
+                                android:id="@+id/transport_contact"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/transport_tel"
+                                android:inputType="numberDecimal"
+                                android:maxLength="9"
+                                android:maxLines="1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/transport_address"
+                                app:layout_constraintTop_toBottomOf="@+id/transport_address" />
+
+                            <EditText
+                                android:id="@+id/transport_price"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/transport_price"
+                                android:inputType="numberDecimal"
+                                android:maxLength="9"
+                                android:maxLines="1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/transport_contact"
+                                app:layout_constraintTop_toBottomOf="@+id/transport_contact" />
+
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_20dp"
+                            android:layout_marginBottom="@dimen/_20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:layout_marginEnd="@dimen/_5dp"
+                                android:text="@string/transport_text"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/dinpro_medium"/>
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -129,6 +181,55 @@
 
 
             </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/_5dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_transport_validate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5dp"
+                    android:background="@drawable/btn_green"
+                    android:fontFamily="@font/dinpro_regular"
+                    android:text="Valider"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_transport_cancel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:background="@drawable/btn_black"
+                    android:fontFamily="@font/dinpro_regular"
+                    android:text="Anuler"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginBottom="@dimen/_20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/_10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_marginEnd="@dimen/_5dp"
+                    android:text="@string/transport_sub"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/dinpro_medium"/>
+            </LinearLayout>
+
 
         </LinearLayout>
 

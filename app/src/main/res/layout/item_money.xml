@@ -13,14 +13,8 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         android:textSize="@dimen/text_spinner"
-        android:fontFamily="@font/dinpro_medium"
+        android:textColor="@color/purple_500"
+        android:fontFamily="@font/myriadpro_bold"
         android:text="Activation sur" />
 
-    <TextView
-        android:id="@+id/reseaux_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/text_spinner"
-        android:fontFamily="@font/dinpro_medium"
-        android:text="" />
 </LinearLayout>

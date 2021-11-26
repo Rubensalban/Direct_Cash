@@ -18,7 +18,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_back"
-            android:background="?selectableItemBackground"
+            android:background="?actionBarItemBackground"
             android:layout_marginTop="@dimen/_10dp"
             android:layout_marginStart="@dimen/_10dp"
             android:layout_alignParentStart="true"
@@ -79,14 +79,14 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="?attr/text_color"
-                            android:textSize="@dimen/text_spinner"
+                            android:textSize="@dimen/header"
                             android:text="Activation sur"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="@color/yellow"
-                            android:textSize="@dimen/text_spinner"
+                            android:textSize="@dimen/header"
                             android:text=" MTN"/>
                     </LinearLayout>
 

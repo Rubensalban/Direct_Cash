@@ -34,10 +34,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import cg.rbns.majitechnologie.directcash.airtel.AirtelActivity;
 import cg.rbns.majitechnologie.directcash.fragment.HomeFragment;
 import cg.rbns.majitechnologie.directcash.fragment.ServiceClientFragment;
-import cg.rbns.majitechnologie.directcash.mtn.MtnActivity;
 import cg.rbns.majitechnologie.directcash.upgrade.UpdateHelper;
 
 public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUpdateCheckListener {

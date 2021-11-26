@@ -7,8 +7,6 @@ public class ReseauxItem {
         mReseauxName = reseauxName;
     }
 
-
-
     public String getmReseauxName(){
         return mReseauxName;
     }

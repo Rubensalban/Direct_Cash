@@ -17,7 +17,7 @@
             android:id="@+id/solde_back"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:background="?selectableItemBackground"
+            android:background="?actionBarItemBackground"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="@dimen/_10dp"

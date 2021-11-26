@@ -17,12 +17,12 @@
             android:id="@+id/forfait_back"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_back"
-            android:background="?selectableItemBackground"
-            android:layout_marginTop="@dimen/_10dp"
-            android:layout_marginStart="@dimen/_10dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="?actionBarItemBackground"
+            android:src="@drawable/ic_back"
             app:tint="@color/black_acsent" />
 
         <ImageView
@@ -79,14 +79,14 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="?attr/text_color"
-                            android:textSize="@dimen/text_spinner"
+                            android:textSize="@dimen/header"
                             android:text="Activation sur"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="@color/red"
-                            android:textSize="@dimen/text_spinner"
+                            android:textSize="@dimen/header"
                             android:text=" AIRTEL"/>
                     </LinearLayout>
 
@@ -408,14 +408,14 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="?attr/text_color"
-                            android:textSize="@dimen/text_spinner"
+                            android:textSize="@dimen/header"
                             android:text="Par"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="@color/red"
-                            android:textSize="@dimen/text_spinner"
+                            android:textSize="@dimen/header"
                             android:text=" Airtel Money"/>
                     </LinearLayout>
 

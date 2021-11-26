@@ -7,6 +7,8 @@
     <string name="annuler">Annuler</string>
     <string name="srv_airtel">00242053650000</string>
     <string name="srv_mtn">00242065250000</string>
+    <string name="sav_airtel">00242050774444</string>
+    <string name="sav_mtn">00242064004646</string>
     <string name="service_client">Service client: 06 400 4646 | 05 065 4444</string>
     <string name="svp_number">Veuillez indiquer un numéro de téléphone</string>
     <string name="renseiger_destinaire">Veuillez renseigner un destinataire</string>
@@ -20,7 +22,7 @@
     <string name="update">Mettre à jour</string>
     <string name="verify_desti">Echec, verifier le numéro du destinataire</string>
     <string name="verify_mtn">Echec, veuillez renseinger un destinataire MTN</string>
-    <string name="verify_airtel">Echec, veuillez renseinger un destinataire AIRTEL</string>
+    <string name="verify_airtel">Echec, veuillez renseinger un destinataire</string>
     <string name="verify_montant">Echec, veuillez renseinger un montant superieur ou egal 50 CFA</string>
     <string name="livraison_de_virtuel"><![CDATA[Livraison de Virtuel & espèces]]></string>
     <string name="trans_pro">Trans Pro \n(Transferts de proxipité)</string>
@@ -32,9 +34,9 @@
     <string name="partager_par_message_prive">Partager par message privé</string>
     <string name="transferts_intr_reseaux">Transferts inter-réseaux</string>
     <string name="operations_factures_aux_frais">Opérations facturées aux frais habituels des opérateurs</string>
-    <string name="destinataire_phone">Taper le numéro de téléphone du destinataire</string>
+    <string name="destinataire_phone">Numéro de téléphone du destinataire</string>
     <string name="confirm_destinataire_phone">Confirmer le numéro de téléphone du destinataire</string>
-    <string name="price_send_phone">Taper le montant à envoyer</string>
+    <string name="price_send_phone">Montant à envoyer</string>
     <string name="direct_seb_text">Direct Cash in vous permet de transfere directement de l\'argent par Mobile Money d\'un réseau à un autre depuis votre mobile et sans vous deplacer.</string>
     <string name="direct_sub_text_2">Avant de cliquer sun le button valider, assurez-vous que les num\"ros saisis sont corrects. \nEn cas d\'erreur de numéro, nous ne pourrons être tenu responsable.</string>
     <string name="trans_pro_head">Trans Pro</string>
@@ -47,4 +49,15 @@
     <string name="exit_yes">oui</string>
     <string name="exit_verify">Êtes-vous sûr?</string>
     <string name="exit_msg">Voulez-vous quitter l\'application</string>
+    <string name="invalide_number">Numéro de téléphone invalide</string>
+    <string name="transport_name">Saisir votre nom</string>
+    <string name="transport_adrress">Indiquer votre adresse</string>
+    <string name="transport_tel">Votre numéro de téléphone</string>
+    <string name="transport_price">Indiquer le montant</string>
+    <string name="transport_text">Ce service express vous permet d\'effectuer vos opérations de Mobile Money sans vous déplacer (Espèces et virtuels).</string>
+    <string name="transport_sub">Après envoi de la demande, un de nos coursiers prendra aussitôt attache avec vous pour venir à votre rencontre !</string>
+    <string name="user_name">"Veuillez saisir votre nom"</string>
+    <string name="user_address">Veillez indiquer votre adresse</string>
+    <string name="user_price">Veillez indiquer le montant</string>
+    <string name="user_contact">Veillez indiquer numéro de téléphone</string>
 </resources>

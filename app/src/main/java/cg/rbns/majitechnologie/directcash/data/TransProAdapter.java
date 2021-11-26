@@ -14,10 +14,11 @@ import java.util.ArrayList;
 
 import cg.rbns.majitechnologie.directcash.R;
 
-public class ReseauxAdapter extends ArrayAdapter<ReseauxItem> {
+public class TransProAdapter extends ArrayAdapter<TransProItem>  {
 
-    public ReseauxAdapter(Context context, ArrayList<ReseauxItem> reseauxItemArrayList) {
-        super(context, 0, reseauxItemArrayList);
+
+    public TransProAdapter(Context context, ArrayList<TransProItem> transProItemList) {
+        super(context, 0, transProItemList);
     }
 
     @NonNull
@@ -31,20 +32,17 @@ public class ReseauxAdapter extends ArrayAdapter<ReseauxItem> {
         return initView(position, convertView, parent);
     }
 
-    private View initView(int position, View reseauView, ViewGroup parent){
-        if (reseauView == null){
-            reseauView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.item_money, parent, false
+    private View initView(int position, View transportView, ViewGroup parent){
+        if (transportView == null){
+            transportView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.item_trans_pro, parent, false
             );
         }
-
-        TextView textView = reseauView.findViewById(R.id.reseaux_item_name);
-        ReseauxItem reseauxItems = getItem(position);
-
-        if (reseauxItems != null) {
-            textView.setText(reseauxItems.getmReseauxName());
+        TextView textView = transportView.findViewById(R.id.transport_item);
+        TransProItem transProItems = getItem(position);
+        if (transProItems != null) {
+            textView.setText(transProItems.getmTransMode());
         }
-
-        return reseauView;
+        return transportView;
     }
 }
