@@ -1,12 +1,14 @@
 package cg.rbns.majitechnologie.directcash.layouts;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -41,6 +43,8 @@ public class MoneyShareActivity2 extends AppCompatActivity {
     private ArrayList<ReseauxItem> mReseauxList;
     private static final int CONTACT_PERMISSION_CODE = 1;
     private static final int CONTACT_PICK_CODE = 2;
+    private TelephonyManager telephonyManager;
+    String my_operator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,10 @@ public class MoneyShareActivity2 extends AppCompatActivity {
         btn_tel2 = findViewById(R.id.btn_contact2);
         btn_back = findViewById(R.id.back_money);
         network_Spinner = findViewById(R.id.spinner_money);
+        telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
+        //Operator Init
+        my_operator = telephonyManager.getSimOperatorName();
 
         // Initialize a new list and Spinner
         mReseauxList = new ArrayList<>();
@@ -299,9 +307,8 @@ public class MoneyShareActivity2 extends AppCompatActivity {
     }
 
     private void send_sms(int nb, String my_confirm_dest) {
-        String firstTwoChars = "";
         Uri tel_number;
-        if (firstTwoChars.equals("06")){
+        if (my_operator.equals("MTN-CG")){
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
         }else {
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_airtel));

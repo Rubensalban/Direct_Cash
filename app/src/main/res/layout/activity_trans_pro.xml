@@ -93,7 +93,7 @@
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/trans_spinner"
-                                android:layout_width="160dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 app:layout_constraintStart_toStartOf="parent"

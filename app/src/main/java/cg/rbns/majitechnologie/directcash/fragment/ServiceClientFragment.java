@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import cg.rbns.majitechnologie.directcash.R;
+import cg.rbns.majitechnologie.directcash.layouts.ForfaitsMtnActivity;
 
 
 public class ServiceClientFragment extends Fragment {
@@ -78,26 +79,36 @@ public class ServiceClientFragment extends Fragment {
         btn_airtel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:00242050774444"));
-                if (ActivityCompat.checkSelfPermission(getContext(),
-                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CALL_PHONE}, 1);
+                } else {
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:00242050774444"));
+                    try {
+                        startActivity(callIntent);
+                    } catch (SecurityException e) {
+                        e.printStackTrace();
+                    }
+
                 }
-                startActivity(callIntent);
             }
         });
 
         btn_mtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:00242064004646"));
-                if (ActivityCompat.checkSelfPermission(getContext(),
-                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CALL_PHONE}, 1);
+                } else {
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:00242064004646"));
+                    try {
+                        startActivity(callIntent);
+                    } catch (SecurityException e) {
+                        e.printStackTrace();
+                    }
+
                 }
-                startActivity(callIntent);
             }
         });
 

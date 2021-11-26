@@ -17,6 +17,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,6 +43,8 @@ public class MoneyShareActivity extends AppCompatActivity {
     private ArrayAdapter mAdapter;
     private String network;
     private ArrayList<ReseauxItem> mReseauxList;
+    private TelephonyManager telephonyManager;
+    String my_operator;
     private static final int CONTACT_PERMISSION_CODE = 1;
     private static final int CONTACT_PICK_CODE = 2;
 
@@ -61,6 +64,7 @@ public class MoneyShareActivity extends AppCompatActivity {
         btn_tel2 = findViewById(R.id.btn_contact2);
         btn_back = findViewById(R.id.back_money);
         network_Spinner = findViewById(R.id.spinner_money);
+        telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
         // Initialize a new list and Spinner
         mReseauxList = new ArrayList<>();
@@ -302,14 +306,8 @@ public class MoneyShareActivity extends AppCompatActivity {
     }
 
     private void send_sms(int nb, String my_confirm_dest) {
-        String firstTwoChars = "";
         Uri tel_number;
-        /*if (my_confirm_dest.length() > 2) {
-            firstTwoChars = my_confirm_dest.substring(0, 2);
-        } else {
-            firstTwoChars = my_confirm_dest;
-        }*/
-        if (firstTwoChars.equals("06")){
+        if (my_operator.equals("MTN-CG")){
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
         }else {
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_airtel));
