@@ -19,6 +19,10 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".layouts.MoneyShareActivity2"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".layouts.ForfaitsAirtelActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -31,14 +35,12 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".layouts.SoldeActivity"
+            android:name=".layouts.TransProActivity2"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".mtn.MtnActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".airtel.AirtelActivity"
+            android:name=".layouts.SoldeActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

@@ -37,8 +37,8 @@
     <string name="destinataire_phone">Numéro de téléphone du destinataire</string>
     <string name="confirm_destinataire_phone">Confirmer le numéro de téléphone du destinataire</string>
     <string name="price_send_phone">Montant à envoyer</string>
-    <string name="direct_seb_text">Direct Cash in vous permet de transfere directement de l\'argent par Mobile Money d\'un réseau à un autre depuis votre mobile et sans vous deplacer.</string>
-    <string name="direct_sub_text_2">Avant de cliquer sun le button valider, assurez-vous que les num\"ros saisis sont corrects. \nEn cas d\'erreur de numéro, nous ne pourrons être tenu responsable.</string>
+    <string name="direct_seb_text">Direct Cash in vous permet de transférer directement de l\'argent par Mobile Money d\'un réseau à un autre depuis votre mobile et sans vous déplacer.</string>
+    <string name="direct_sub_text_2">Avant de cliquer sun le button valider, assurez-vous que les numéros saisis sont corrects. En cas d\'erreur de numéro, nous ne pourrons être tenu pour responsable.</string>
     <string name="trans_pro_head">Trans Pro</string>
     <string name="transfert_money">Transferts de proximité</string>
     <string name="airtel"><font fgcolor='#E3252A'> Airtel</font></string>
@@ -60,4 +60,11 @@
     <string name="user_address">Veillez indiquer votre adresse</string>
     <string name="user_price">Veillez indiquer le montant</string>
     <string name="user_contact">Veillez indiquer numéro de téléphone</string>
+    <string name="cash">Besoin d\'espèce</string>
+    <string name="virtuel">Besoin de virtuel</string>
+    <string name="numero_de_telephone_du_destinataire">Numéro de téléphone du destinataire</string>
+    <string name="nous_suivre_sur">Nous suivre sur:</string>
+    <string name="service_disponible_7_jours_7">Service disponible 7 jours / 7</string>
+    <string name="airtel_to_mtn">Airtel vers MTN</string>
+    <string name="mtn_to_airtel">MTN vers Airtel</string>
 </resources>

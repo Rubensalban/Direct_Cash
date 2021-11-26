@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         android:textSize="@dimen/text_spinner"
-        android:textColor="@color/purple_500"
-        android:fontFamily="@font/myriadpro_bold"
+        android:fontFamily="@font/dinpro_medium"
         android:text="Activation sur" />
 
 </LinearLayout>

@@ -1,12 +1,7 @@
 package cg.rbns.majitechnologie.directcash.layouts;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatSpinner;
-
 import android.content.Context;
 import android.content.Intent;
-import android.net.TransportInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -17,17 +12,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatSpinner;
+
 import java.util.ArrayList;
 
 import cg.rbns.majitechnologie.directcash.MainActivity;
 import cg.rbns.majitechnologie.directcash.R;
-import cg.rbns.majitechnologie.directcash.data.ReseauxAdapter;
-import cg.rbns.majitechnologie.directcash.data.ReseauxItem;
 import cg.rbns.majitechnologie.directcash.data.TransProAdapter;
 import cg.rbns.majitechnologie.directcash.data.TransProItem;
 
-public class TransProActivity extends AppCompatActivity {
-
+public class TransProActivity2 extends AppCompatActivity {
     private AppCompatSpinner transport_Spinner;
     private ArrayAdapter mAdapter;
     private ArrayList<TransProItem> mTransProItemList;
@@ -112,8 +108,8 @@ public class TransProActivity extends AppCompatActivity {
 
         // Initialize a new list and Spinner
         mTransProItemList = new ArrayList<>();
-        mTransProItemList.add(new TransProItem(getString(R.string.cash)));
         mTransProItemList.add(new TransProItem(getString(R.string.virtuel)));
+        mTransProItemList.add(new TransProItem(getString(R.string.cash)));
         mAdapter = new TransProAdapter(this, mTransProItemList);
         transport_Spinner.setAdapter(mAdapter);
         transport_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -133,7 +129,7 @@ public class TransProActivity extends AppCompatActivity {
     private void send_sms(String my_operator, String name, String address, String price, String contact) {
         String result =  transport_mode + "-" + name + "-" + address + "-" + contact + "-" + price;
         if (contact.length() < 9) {
-            Toast.makeText(TransProActivity.this, getString(R.string.msg_error), Toast.LENGTH_SHORT).show();
+            Toast.makeText(TransProActivity2.this, getString(R.string.msg_error), Toast.LENGTH_SHORT).show();
         } else {
             if (my_operator.equals("MTN-CG")){
                 Uri tel_number;
@@ -159,7 +155,7 @@ public class TransProActivity extends AppCompatActivity {
     }
 
     private void back_to_preview() {
-        Intent i = new Intent(TransProActivity.this, MainActivity.class);
+        Intent i = new Intent(TransProActivity2.this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();

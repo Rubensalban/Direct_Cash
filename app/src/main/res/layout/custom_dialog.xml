@@ -13,7 +13,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rectangle_edit"
-        android:hint="Numéro de téléphone du destinataire..."
+        android:hint="@string/numero_de_telephone_du_destinataire"
         android:inputType="number"
         android:maxLines="1"
         android:padding="4dp"

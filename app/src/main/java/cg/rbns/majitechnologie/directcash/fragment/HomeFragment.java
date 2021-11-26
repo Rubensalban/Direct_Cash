@@ -18,8 +18,10 @@ import cg.rbns.majitechnologie.directcash.R;
 import cg.rbns.majitechnologie.directcash.layouts.ForfaitsAirtelActivity;
 import cg.rbns.majitechnologie.directcash.layouts.ForfaitsMtnActivity;
 import cg.rbns.majitechnologie.directcash.layouts.MoneyShareActivity;
+import cg.rbns.majitechnologie.directcash.layouts.MoneyShareActivity2;
 import cg.rbns.majitechnologie.directcash.layouts.SoldeActivity;
 import cg.rbns.majitechnologie.directcash.layouts.TransProActivity;
+import cg.rbns.majitechnologie.directcash.layouts.TransProActivity2;
 
 public class HomeFragment extends Fragment {
 
@@ -46,15 +48,55 @@ public class HomeFragment extends Fragment {
         card_trans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MoneyShareActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                String[] items = {getString(R.string.mtn_to_airtel), getString(R.string.airtel_to_mtn)};
+                alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                Intent i = new Intent(getActivity(), MoneyShareActivity.class);
+                                startActivity(i);
+                                dialog.dismiss();
+                                break;
+                            case 1:
+                                Intent io = new Intent(getActivity(), MoneyShareActivity2.class);
+                                startActivity(io);
+                                dialog.dismiss();
+                                break;
+                        }
+                    }
+                });
+                AlertDialog alert = alertDialog.create();
+                alert.setCanceledOnTouchOutside(false);
+                alert.show();
             }
         });
         card_transpro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i_pro = new Intent(getActivity(), TransProActivity.class);
-                startActivity(i_pro);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                String[] items = {getString(R.string.cash), getString(R.string.virtuel)};
+                alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                Intent i = new Intent(getActivity(), TransProActivity.class);
+                                startActivity(i);
+                                dialog.dismiss();
+                                break;
+                            case 1:
+                                Intent io = new Intent(getActivity(), TransProActivity2.class);
+                                startActivity(io);
+                                dialog.dismiss();
+                                break;
+                        }
+                    }
+                });
+                AlertDialog alert = alertDialog.create();
+                alert.setCanceledOnTouchOutside(false);
+                alert.show();
             }
         });
         card_solde.setOnClickListener(new View.OnClickListener() {

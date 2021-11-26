@@ -24,34 +24,31 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_direct" />
     </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Service Client"
-        android:layout_marginTop="@dimen/_10dp"
-        android:layout_marginStart="@dimen/_10dp"
-        android:layout_marginEnd="@dimen/_10dp"
-        android:textSize="@dimen/header"
-        android:textColor="@color/purple_700"/>
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10dp"
-        android:layout_marginStart="@dimen/_5dp"
-        android:layout_marginEnd="@dimen/_5dp"
-        android:layout_marginBottom="@dimen/_20dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_margin="@dimen/_5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Service Client"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:textSize="@dimen/header"
+            android:textColor="@color/purple_700"/>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5dp"
                 android:paddingStart="@dimen/_5dp"
                 android:paddingEnd="@dimen/_5dp">
 
@@ -72,9 +69,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="?actionBarItemBackground"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground"
                         android:layout_marginTop="@dimen/_20dp">
                         <ImageView
+                            android:background="?actionBarItemBackground"
                             android:layout_width="@dimen/icon_phone"
                             android:layout_height="@dimen/icon_phone"
                             android:layout_gravity="center"
@@ -96,6 +95,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground"
                         android:layout_marginTop="@dimen/_10dp">
                         <ImageView
                             android:background="?actionBarItemBackground"
@@ -116,7 +117,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginTop="@dimen/_5dp"
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -126,27 +127,31 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:paddingTop="@dimen/_10dp"
+                            android:paddingStart="@dimen/_10dp"
+                            android:paddingEnd="@dimen/_10dp"
                             android:orientation="horizontal">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nous suivre sur:"
+                                android:text="@string/nous_suivre_sur"
                                 android:textSize="16sp"
                                 android:layout_gravity="center"/>
                             <ImageView
                                 android:id="@+id/btn_whatsapp"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginStart="@dimen/_20dp"
                                 android:background="?actionBarItemBackground"
-                                android:layout_marginEnd="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_5dp"
                                 android:src="@drawable/ic_whatsapp"
                                 android:scaleType="centerInside"/>
                             <ImageView
                                 android:id="@+id/btn_facebook"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:layout_marginEnd="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_5dp"
+                                android:layout_marginStart="@dimen/_10dp"
                                 android:background="?actionBarItemBackground"
                                 android:src="@drawable/ic_facebook"
                                 android:scaleType="centerInside"/>
@@ -154,7 +159,8 @@
                                 android:id="@+id/btn_instagramm"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:layout_marginEnd="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_5dp"
+                                android:layout_marginStart="@dimen/_10dp"
                                 android:background="?actionBarItemBackground"
                                 android:src="@drawable/ic_instagram"
                                 android:scaleType="centerInside"/>
@@ -162,6 +168,7 @@
                                 android:id="@+id/btn_youtube"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
+                                android:layout_marginStart="@dimen/_10dp"
                                 android:background="?actionBarItemBackground"
                                 android:src="@drawable/ic_youtube"
                                 android:scaleType="centerInside"/>
@@ -169,7 +176,8 @@
                         <View
                             android:layout_gravity="end"
                             android:layout_marginTop="@dimen/_5dp"
-                            android:layout_width="125dp"
+                            android:layout_width="148dp"
+                            android:layout_marginEnd="@dimen/_6dp"
                             android:layout_height="1dp"
                             android:background="@color/grey_20"/>
                     </LinearLayout>
@@ -180,7 +188,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="10sp"
-                        android:text="Service disponible 7 jours / 7"/>
+                        android:text="@string/service_disponible_7_jours_7"/>
 
                     <ImageView
                         android:layout_width="150dp"

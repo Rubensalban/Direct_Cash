@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
         //Operator Init
         my_operator = telephonyManager.getSimOperatorName();
 
-
         // Load Default Fragment
         loadFragment(new HomeFragment());
 
@@ -110,9 +109,6 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
                             //Log.w(TAG, "Fetching FCM registration token failed", task.getException());
                             return;
                         }
-                        /*String token = task.getResult();
-                        String msg = "Done";
-                        Log.d(TAG, msg);*/
                     }
                 });
 
@@ -120,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
         UpdateHelper.with(this)
                 .onUpdateCheck(this)
                 .check();
-
 
 
     }
@@ -131,9 +126,9 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
             String shareMessage= "Permettez-moi de vous recommander cette application\n";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            shareMessage = shareMessage + "\nhttps://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-            startActivity(Intent.createChooser(shareIntent, "choisissez-en un"));
+            startActivity(Intent.createChooser(shareIntent, "Partager via"));
         } catch(Exception e) {
             //e.toString();
         }

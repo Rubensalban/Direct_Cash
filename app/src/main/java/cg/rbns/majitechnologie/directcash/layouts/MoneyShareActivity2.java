@@ -1,16 +1,6 @@
 package cg.rbns.majitechnologie.directcash.layouts;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -24,15 +14,22 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatSpinner;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import java.util.ArrayList;
-import java.util.List;
 
 import cg.rbns.majitechnologie.directcash.MainActivity;
 import cg.rbns.majitechnologie.directcash.R;
 import cg.rbns.majitechnologie.directcash.data.ReseauxAdapter;
 import cg.rbns.majitechnologie.directcash.data.ReseauxItem;
 
-public class MoneyShareActivity extends AppCompatActivity {
+public class MoneyShareActivity2 extends AppCompatActivity {
 
     private EditText tel_1, tel_2, tel_price;
     private AppCompatButton btn_send, btn_cancel;
@@ -64,8 +61,8 @@ public class MoneyShareActivity extends AppCompatActivity {
 
         // Initialize a new list and Spinner
         mReseauxList = new ArrayList<>();
-        mReseauxList.add(new ReseauxItem(getString(R.string.mtn_to_airtel)));
         mReseauxList.add(new ReseauxItem(getString(R.string.airtel_to_mtn)));
+        mReseauxList.add(new ReseauxItem(getString(R.string.mtn_to_airtel)));
         mAdapter = new ReseauxAdapter(this, mReseauxList);
         network_Spinner.setAdapter(mAdapter);
         network_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -178,7 +175,7 @@ public class MoneyShareActivity extends AppCompatActivity {
                     } else if (firstFourChars2.equals("0024204") && c_firstFourChars2.equals("0024204")) {
                         check(my_dest, my_montant, my_confirm_dest);
                     } else {
-                        Toast.makeText(MoneyShareActivity.this, getString(R.string.verify_airtel), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MoneyShareActivity2.this, getString(R.string.verify_airtel), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -217,7 +214,7 @@ public class MoneyShareActivity extends AppCompatActivity {
             if (grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 pickContactIntent();
             } else {
-                Toast.makeText(MoneyShareActivity.this, "Permission refuser", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MoneyShareActivity2.this, "Permission refuser", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -276,7 +273,7 @@ public class MoneyShareActivity extends AppCompatActivity {
             tel_2.setText(final_tel);
             tel_price.setFocusable(true);
         } else {
-            Toast.makeText(MoneyShareActivity.this, getString(R.string.invalide_number) + reset_tel, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MoneyShareActivity2.this, getString(R.string.invalide_number) + reset_tel, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -288,15 +285,15 @@ public class MoneyShareActivity extends AppCompatActivity {
                 if (my_confirm_dest.equals(my_dest)){
                     int nb = Integer.parseInt(my_montant);
                     if (nb < 49) {
-                        Toast.makeText(MoneyShareActivity.this, getString(R.string.verify_montant), Toast.LENGTH_LONG).show();
+                        Toast.makeText(MoneyShareActivity2.this, getString(R.string.verify_montant), Toast.LENGTH_LONG).show();
                     } else {
                         send_sms(nb, my_confirm_dest);
                     }
                 } else {
-                    Toast.makeText(MoneyShareActivity.this, getString(R.string.identik_destinataire), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MoneyShareActivity2.this, getString(R.string.identik_destinataire), Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(MoneyShareActivity.this, getString(R.string.verify_desti), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.verify_desti), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -304,11 +301,6 @@ public class MoneyShareActivity extends AppCompatActivity {
     private void send_sms(int nb, String my_confirm_dest) {
         String firstTwoChars = "";
         Uri tel_number;
-        /*if (my_confirm_dest.length() > 2) {
-            firstTwoChars = my_confirm_dest.substring(0, 2);
-        } else {
-            firstTwoChars = my_confirm_dest;
-        }*/
         if (firstTwoChars.equals("06")){
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
         }else {
@@ -327,7 +319,7 @@ public class MoneyShareActivity extends AppCompatActivity {
     }
 
     private void back_to_preview() {
-        Intent i = new Intent(MoneyShareActivity.this, MainActivity.class);
+        Intent i = new Intent(MoneyShareActivity2.this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
