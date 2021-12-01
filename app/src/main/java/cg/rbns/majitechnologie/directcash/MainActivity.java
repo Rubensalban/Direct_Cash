@@ -126,9 +126,9 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
             String shareMessage= "Permettez-moi de vous recommander cette application\n";
-            shareMessage = shareMessage + "\nhttps://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            shareMessage = shareMessage + "\nhttps://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-            startActivity(Intent.createChooser(shareIntent, "Partager via"));
+            startActivity(Intent.createChooser(shareIntent, "Partagez via"));
         } catch(Exception e) {
             //e.toString();
         }

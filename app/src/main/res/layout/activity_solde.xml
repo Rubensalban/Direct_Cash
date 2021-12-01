@@ -10,24 +10,24 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_header"
+        android:layout_height="@dimen/_120sdp"
         android:background="@color/purple_700">
 
         <ImageView
             android:id="@+id/solde_back"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
             android:background="?actionBarItemBackground"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="@dimen/_10dp"
-            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:src="@drawable/ic_back"
             app:tint="@color/black_acsent" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
@@ -37,87 +37,86 @@
             android:src="@drawable/ic_direct" />
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Consulter mon solde"
-        android:fontFamily="@font/myriadpro_bold"
-        android:textColor="@color/purple_700"
-        android:textSize="@dimen/header"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_10dp"/>
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_10dp"
         app:cardElevation="1dp"
-        android:layout_marginTop="@dimen/_10dp"
-        android:layout_marginStart="@dimen/_10dp"
-        android:layout_marginEnd="@dimen/_10dp"
-        android:layout_marginBottom="@dimen/_5dp">
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_20dp"
+            android:padding="@dimen/_10sdp"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consulter mon solde"
+                android:fontFamily="@font/myriadpro_bold"
+                android:textColor="@color/purple_700"
+                android:textSize="@dimen/_16ssp"
+                android:layout_gravity="center"/>
 
             <LinearLayout
                 android:id="@+id/solde_mtn"
                 android:background="@drawable/mtn_btn"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:clickable="true"
                 android:foreground="?selectableItemBackground"
-                android:paddingStart="@dimen/_10dp"
-                android:paddingEnd="@dimen/_15dp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_15sdp"
                 android:gravity="center"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
                     android:src="@drawable/ic_phone_tel"
-                    android:padding="@dimen/_10dp"
+                    android:padding="@dimen/_5sdp"
                     android:scaleType="centerInside"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black_acsent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_12ssp"
                     android:fontFamily="@font/myriadpro_bold"
                     android:text="Consulter mon solde MoMo"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/solde_airtel"
-                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/airtel_btn"
                 android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_width="wrap_content"
                 android:clickable="true"
                 android:foreground="?selectableItemBackground"
-                android:paddingStart="@dimen/_10dp"
-                android:paddingEnd="@dimen/_15dp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_15sdp"
                 android:gravity="center"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
                     android:src="@drawable/ic_phone_tel"
-                    android:padding="@dimen/_10dp"
+                    android:padding="@dimen/_5sdp"
                     android:scaleType="centerInside"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black_acsent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_12ssp"
                     android:fontFamily="@font/myriadpro_bold"
                     android:text="Consulter mon solde AM"/>
             </LinearLayout>
 
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 

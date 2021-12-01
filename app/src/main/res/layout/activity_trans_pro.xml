@@ -10,17 +10,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_header"
+        android:layout_height="@dimen/_120sdp"
         android:background="@color/purple_700">
 
         <ImageView
             android:id="@+id/trans_back"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="@dimen/_10dp"
-            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="?actionBarItemBackground"
             android:src="@drawable/ic_back"
             app:tint="@color/black_acsent" />
@@ -28,12 +28,12 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="@dimen/_15dp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_direct" />
     </RelativeLayout>
@@ -47,17 +47,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/trans_pro_head"
-                android:fontFamily="@font/myriadpro_bold"
-                android:textColor="@color/purple_700"
-                android:textSize="@dimen/header"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10dp"/>
-
-            <TextView
+           <!-- <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/transfert_money"
@@ -66,16 +56,15 @@
                 android:layout_marginStart="@dimen/_10dp"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:textSize="14sp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"/>-->
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10dp"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginStart="@dimen/_5dp"
-                android:layout_marginEnd="@dimen/_5dp"
-                android:layout_marginBottom="@dimen/_5dp">
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
 
                 <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
@@ -86,24 +75,34 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/trans_pro_head"
+                            android:fontFamily="@font/myriadpro_bold"
+                            android:textColor="@color/purple_700"
+                            android:textSize="@dimen/_16ssp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10dp"/>
+
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="@dimen/_10dp">
+                            android:padding="@dimen/_8sdp">
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/trans_spinner"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
                                 android:id="@+id/imageView4"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_80sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
                                 android:src="@drawable/ic_moto"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/trans_spinner" />
@@ -115,7 +114,7 @@
                                 android:ems="10"
                                 android:hint="@string/transport_name"
                                 android:inputType="textPersonName"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 android:maxLines="1"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/trans_spinner"
@@ -128,7 +127,7 @@
                                 android:ems="10"
                                 android:hint="@string/transport_adrress"
                                 android:inputType="text"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/transport_name"
                                 app:layout_constraintTop_toBottomOf="@+id/transport_name" />
@@ -141,7 +140,7 @@
                                 android:hint="@string/transport_tel"
                                 android:inputType="numberDecimal"
                                 android:maxLength="9"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 android:maxLines="1"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/transport_address"
@@ -155,7 +154,7 @@
                                 android:hint="@string/transport_price"
                                 android:inputType="numberDecimal"
                                 android:maxLength="9"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 android:maxLines="1"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/transport_contact"
@@ -164,19 +163,29 @@
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                         <LinearLayout
-                            android:layout_marginTop="@dimen/_20dp"
-                            android:layout_marginBottom="@dimen/_20dp"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:layout_marginBottom="@dimen/_18sdp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_5dp"
-                                android:layout_marginEnd="@dimen/_5dp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
                                 android:text="@string/transport_text"
                                 android:textAlignment="center"
-                                android:textSize="12sp"
+                                android:textSize="@dimen/_8ssp"
+                                android:fontFamily="@font/dinpro_medium"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:text="@string/transport_sub"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/_6ssp"
                                 android:fontFamily="@font/dinpro_medium"/>
                         </LinearLayout>
 
@@ -189,51 +198,36 @@
 
             <LinearLayout
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginBottom="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/_5dp"
+                android:padding="@dimen/_5sdp"
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_transport_validate"
-                    android:layout_width="150dp"
+                    android:layout_width="@dimen/_100sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_5dp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:background="@drawable/btn_green"
                     android:fontFamily="@font/dinpro_regular"
                     android:text="Valider"
+                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_transport_cancel"
-                    android:layout_width="150dp"
+                    android:layout_width="@dimen/_100sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:background="@drawable/btn_black"
                     android:fontFamily="@font/dinpro_regular"
                     android:text="Anuler"
+                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/white" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginBottom="@dimen/_20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/_5dp"
-                android:paddingBottom="@dimen/_10dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5dp"
-                    android:layout_marginEnd="@dimen/_5dp"
-                    android:text="@string/transport_sub"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/dinpro_medium"/>
             </LinearLayout>
 
 

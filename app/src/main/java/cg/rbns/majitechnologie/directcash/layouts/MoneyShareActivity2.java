@@ -69,8 +69,8 @@ public class MoneyShareActivity2 extends AppCompatActivity {
 
         // Initialize a new list and Spinner
         mReseauxList = new ArrayList<>();
-        mReseauxList.add(new ReseauxItem(getString(R.string.airtel_to_mtn)));
-        mReseauxList.add(new ReseauxItem(getString(R.string.mtn_to_airtel)));
+        mReseauxList.add(new ReseauxItem(getString(R.string.airtel_to_mtn2)));
+        mReseauxList.add(new ReseauxItem(getString(R.string.mtn_to_airtel2)));
         mAdapter = new ReseauxAdapter(this, mReseauxList);
         network_Spinner.setAdapter(mAdapter);
         network_Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -2,7 +2,7 @@
 <resources>
     <dimen name="bottom_navigtion_size">50dp</dimen>
     <dimen name="_5dp">5dp</dimen>
-    <dimen name="card_size">180dp</dimen>
+    <dimen name="card_size">163dp</dimen>
     <dimen name="text_main">12sp</dimen>
     <dimen name="text_edit">14sp</dimen>
     <dimen name="text_spinner">12sp</dimen>
@@ -17,7 +17,7 @@
     <dimen name="_15dp">15dp</dimen>
     <dimen name="header">22sp</dimen>
     <dimen name="icon_phone">28dp</dimen>
-    <dimen name="header_main">120dp</dimen>
+    <dimen name="header_main">100dp</dimen>
     <dimen name="_2dp">2dp</dimen>
     <dimen name="_6dp">6dp</dimen>
 </resources>

@@ -12,7 +12,7 @@
     <string name="service_client">Service client: 06 400 4646 | 05 065 4444</string>
     <string name="svp_number">Veuillez indiquer un numéro de téléphone</string>
     <string name="renseiger_destinaire">Veuillez renseigner un destinataire</string>
-    <string name="identik_destinataire">Vérifier et renseigner le même destinataire</string>
+    <string name="identik_destinataire">Vérifiez et renseignez le même destinataire</string>
     <string name="confim_renseiger_destinaire">Veuillez confirmer le numéro du destinataire</string>
     <string name="svp_montant">Veuillez renseigner un montant à envoyer</string>
     <string name="msg_token_fmt">Messaging</string>
@@ -30,8 +30,8 @@
     <string name="mon_solde">Consulter mon solde</string>
     <string name="activation_de_forfaits">Activation de forfaits</string>
     <string name="a_propos">A propos</string>
-    <string name="partager_via">Partager via...</string>
-    <string name="partager_par_message_prive">Partager par message privé</string>
+    <string name="partager_via">Partagez via...</string>
+    <string name="partager_par_message_prive">Partagez par message privé</string>
     <string name="transferts_intr_reseaux">Transferts inter-réseaux</string>
     <string name="operations_factures_aux_frais">Opérations facturées aux frais habituels des opérateurs</string>
     <string name="destinataire_phone">Numéro de téléphone du destinataire</string>
@@ -43,8 +43,8 @@
     <string name="transfert_money">Transferts de proximité</string>
     <string name="airtel"><font fgcolor='#E3252A'> Airtel</font></string>
     <string name="mtn"><font fgcolor='#FCCC1C'> MTN</font></string>
-    <string name="airtel_activation">Activation sur Airtel</string>
-    <string name="mtn_activation">Activation sur Mtn</string>
+    <string name="airtel_activation">Activation par Airtel</string>
+    <string name="mtn_activation">Activation par Mtn</string>
     <string name="exit_no">non</string>
     <string name="exit_yes">oui</string>
     <string name="exit_verify">Êtes-vous sûr?</string>
@@ -60,11 +60,13 @@
     <string name="user_address">Veillez indiquer votre adresse</string>
     <string name="user_price">Veillez indiquer le montant</string>
     <string name="user_contact">Veillez indiquer numéro de téléphone</string>
-    <string name="cash">Besoin d\'espèce</string>
+    <string name="cash">Besoin d\'espèces</string>
     <string name="virtuel">Besoin de virtuel</string>
     <string name="numero_de_telephone_du_destinataire">Numéro de téléphone du destinataire</string>
     <string name="nous_suivre_sur">Nous suivre sur:</string>
     <string name="service_disponible_7_jours_7">Service disponible 7 jours / 7</string>
-    <string name="airtel_to_mtn">Airtel vers MTN</string>
-    <string name="mtn_to_airtel">MTN vers Airtel</string>
+    <string name="airtel_to_mtn">Airtel Money vers MoMo</string>
+    <string name="mtn_to_airtel">MoMo vers Airtel Money</string>
+    <string name="airtel_to_mtn2">Airtel vers MTN</string>
+    <string name="mtn_to_airtel2">MTN vers Airtel</string>
 </resources>

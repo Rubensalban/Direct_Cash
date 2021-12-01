@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:padding="@dimen/_5dp"
+    android:padding="@dimen/_5sdp"
     android:orientation="horizontal">
 
     <TextView
@@ -12,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
-        android:layout_marginTop="@dimen/_5dp"
-        android:layout_marginBottom="@dimen/_5dp"
-        android:layout_marginEnd="@dimen/_5dp"
-        android:layout_marginStart="@dimen/_5dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
         android:textColor="?attr/text_color"
-        android:textSize="@dimen/text_spinner"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/dinpro_medium"
         android:text="Activation sur" />
 

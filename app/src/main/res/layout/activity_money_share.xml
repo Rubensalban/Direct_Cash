@@ -9,29 +9,29 @@
     tools:context=".layouts.MoneyShareActivity">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_header"
+        android:layout_height="@dimen/_120sdp"
         android:background="@color/purple_700">
 
         <ImageView
             android:id="@+id/back_money"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="@dimen/_10dp"
-            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="?actionBarItemBackground"
             android:src="@drawable/ic_back"
             app:tint="@color/black_acsent" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="@dimen/_15dp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_direct" />
     </RelativeLayout>
@@ -45,17 +45,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/transferts_intr_reseaux"
-                android:fontFamily="@font/myriadpro_bold"
-                android:textColor="@color/purple_700"
-                android:textSize="@dimen/header"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10dp"/>
 
-            <TextView
+
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/operations_factures_aux_frais"
@@ -64,17 +56,16 @@
                 android:layout_marginStart="@dimen/_10dp"
                 android:layout_marginEnd="@dimen/_10dp"
                 android:textSize="14sp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"/>-->
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="1dp"
-                android:padding="@dimen/_10dp"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginStart="@dimen/_5dp"
-                android:layout_marginEnd="@dimen/_5dp"
-                android:layout_marginBottom="@dimen/_5dp">
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
 
                 <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
@@ -85,28 +76,39 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/transferts_intr_reseaux"
+                            android:fontFamily="@font/myriadpro_bold"
+                            android:textColor="@color/purple_700"
+                            android:textSize="@dimen/_16ssp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"/>
+
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="@dimen/_10dp"
-                            android:paddingEnd="@dimen/_10dp"
-                            android:paddingTop="@dimen/_10dp">
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_10sdp">
 
                             <androidx.appcompat.widget.AppCompatSpinner
                                 android:id="@+id/spinner_money"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginStart="@dimen/_4sdp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
                                 android:id="@+id/imageView4"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_80sdp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:layout_marginStart="@dimen/_4sdp"
                                 android:src="@drawable/ic_phone"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/spinner_money" />
@@ -115,11 +117,11 @@
                                 android:id="@+id/money_tel_1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
+                                android:layout_marginEnd="@dimen/_8sdp"
                                 android:ems="10"
                                 android:hint="@string/destinataire_phone"
                                 android:inputType="numberDecimal"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 android:maxLength="9"
                                 android:maxLines="1"
                                 app:layout_constraintEnd_toStartOf="@+id/btn_contact1"
@@ -128,8 +130,8 @@
 
                             <ImageView
                                 android:id="@+id/btn_contact1"
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
                                 android:layout_marginTop="10dp"
                                 android:scaleType="centerInside"
                                 android:src="@drawable/ic_contact"
@@ -142,13 +144,13 @@
                                 android:id="@+id/money_tel_price"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginBottom="2dp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginBottom="@dimen/_2sdp"
                                 android:ems="10"
                                 android:hint="@string/price_send_phone"
                                 android:inputType="numberDecimal"
                                 android:maxLength="9"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 android:maxLines="1"
                                 app:layout_constraintBottom_toTopOf="@+id/money_tel_2"
                                 app:layout_constraintEnd_toEndOf="@+id/money_tel_1"
@@ -159,12 +161,12 @@
                                 android:id="@+id/money_tel_2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
+                                android:layout_marginEnd="@dimen/_8sdp"
                                 android:ems="10"
                                 android:hint="@string/confirm_destinataire_phone"
                                 android:inputType="numberDecimal"
                                 android:maxLength="9"
-                                android:textSize="@dimen/text_edit"
+                                android:textSize="@dimen/_10ssp"
                                 android:maxLines="1"
                                 app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                                 app:layout_constraintEnd_toStartOf="@+id/btn_contact2"
@@ -172,8 +174,8 @@
 
                             <ImageView
                                 android:id="@+id/btn_contact2"
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
                                 android:scaleType="centerInside"
                                 android:background="?actionBarItemBackground"
                                 app:layout_constraintBottom_toBottomOf="@+id/money_tel_2"
@@ -183,30 +185,30 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <LinearLayout
-                            android:layout_marginTop="@dimen/_20dp"
-                            android:layout_marginBottom="@dimen/_20dp"
+                            android:layout_marginTop="@dimen/_18sdp"
+                            android:layout_marginBottom="@dimen/_18sdp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_5dp"
-                                android:layout_marginEnd="@dimen/_5dp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
                                 android:text="@string/direct_seb_text"
                                 android:textAlignment="center"
-                                android:textSize="12sp"
+                                android:textSize="@dimen/_8ssp"
                                 android:fontFamily="@font/dinpro_medium"/>
                             <TextView
-                                android:layout_marginTop="@dimen/_10dp"
+                                android:layout_marginTop="@dimen/_5sdp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_5dp"
-                                android:layout_marginEnd="@dimen/_5dp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
                                 android:text="@string/direct_sub_text_2"
                                 android:textAlignment="center"
                                 android:fontFamily="@font/dinpro_medium"
-                                android:textSize="9sp"/>
+                                android:textSize="@dimen/_6ssp"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -216,32 +218,34 @@
 
             <LinearLayout
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginBottom="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="@dimen/_5dp"
+                android:padding="@dimen/_5sdp"
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_money_validate"
-                    android:layout_width="150dp"
+                    android:layout_width="@dimen/_100sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_5dp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:background="@drawable/btn_green"
                     android:fontFamily="@font/dinpro_regular"
                     android:text="Valider"
+                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_money_cancel"
-                    android:layout_width="150dp"
+                    android:layout_width="@dimen/_100sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:background="@drawable/btn_black"
                     android:fontFamily="@font/dinpro_regular"
                     android:text="Anuler"
+                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/white" />
             </LinearLayout>
 

@@ -45,7 +45,7 @@ public class ServiceClientFragment extends Fragment {
         btn_youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCDsQdQsHFyHs8-sKvjhv7g"));
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCDsQdQBsHFyHs8-sKvjhv7g/featured"));
                 startActivity(i);
             }
         });
@@ -69,7 +69,7 @@ public class ServiceClientFragment extends Fragment {
         btn_whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String number = "00242064004646";
+                String number = "+242064004646";
                 String url = "https://wa.me/"+number;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(i);

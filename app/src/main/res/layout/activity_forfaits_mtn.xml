@@ -10,29 +10,29 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_header"
+        android:layout_height="@dimen/_150sdp"
         android:background="@color/purple_700">
 
         <ImageView
             android:id="@+id/forfait_back_mtn"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_back"
-            android:background="?actionBarItemBackground"
-            android:layout_marginTop="@dimen/_10dp"
-            android:layout_marginStart="@dimen/_10dp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="?actionBarItemBackground"
+            android:src="@drawable/ic_back"
             app:tint="@color/black_acsent" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="@dimen/_15dp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_direct" />
     </RelativeLayout>
@@ -43,66 +43,70 @@
         android:text="Activer un forfait SMS"
         android:textColor="@color/purple_700"
         android:fontFamily="@font/myriadpro_bold"
-        android:textSize="@dimen/header"
+        android:textSize="@dimen/_18ssp"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_10dp"/>
+        android:layout_marginTop="@dimen/_10sdp"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10dp"
-                android:layout_marginTop="@dimen/_10dp"
-                android:layout_marginStart="@dimen/_5dp"
-                android:layout_marginEnd="@dimen/_5dp"
-                android:layout_marginBottom="@dimen/_5dp">
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/_10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp">
 
                     <LinearLayout
-                        android:layout_marginTop="@dimen/_10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
+                            android:text="Par"
                             android:textColor="?attr/text_color"
-                            android:textSize="@dimen/header"
-                            android:text="Activation sur"/>
+                            android:textSize="@dimen/_16ssp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/dinpro_medium"
+                            android:text=" Credit"
                             android:textColor="@color/yellow"
-                            android:textSize="@dimen/header"
-                            android:text=" MTN"/>
+                            android:textSize="@dimen/_16ssp" />
                     </LinearLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sms_15_mtn"
-                        android:layout_marginTop="@dimen/_10dp"
-                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:foreground="?selectableItemBackground">
 
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:src="@drawable/ic_phone_tel2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -113,11 +117,11 @@
                             android:id="@+id/textView11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/text_item1"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Pack 15 SMS (1 jour)"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,10 +129,10 @@
                             android:id="@+id/textView12"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:text="26 FCFA"
                             android:textColor="@color/purple_500"
-                            android:textSize="@dimen/text_item2"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -136,34 +140,36 @@
                             android:id="@+id/textView13"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="@dimen/text_item3"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:text="*125*2*4*1#"
                             android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_8ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginStart="@dimen/_10dp"
-                        android:layout_marginEnd="@dimen/_10dp"
-                        android:background="@color/grey_10"/>
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/grey_10" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sms_25_mtn"
-                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:foreground="?selectableItemBackground">
 
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:src="@drawable/ic_phone_tel2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -174,11 +180,11 @@
                             android:id="@+id/textView20"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/text_item1"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Pack 25 SMS (1 jour)"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -186,10 +192,10 @@
                             android:id="@+id/textView22"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:text="41 FCFA"
                             android:textColor="@color/purple_500"
-                            android:textSize="@dimen/text_item2"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -197,34 +203,36 @@
                             android:id="@+id/textView23"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="@dimen/text_item3"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:text="*125*2*4*2#"
                             android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_8ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginStart="@dimen/_10dp"
-                        android:layout_marginEnd="@dimen/_10dp"
-                        android:background="@color/grey_10"/>
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/grey_10" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sms_50_mtn"
-                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:foreground="?selectableItemBackground">
 
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:src="@drawable/ic_phone_tel2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -235,11 +243,11 @@
                             android:id="@+id/textView30"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/text_item1"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Pack 50 SMS (2 jour)"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -247,10 +255,10 @@
                             android:id="@+id/textView32"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:text="66 FCFA"
-                            android:textSize="@dimen/text_item2"
                             android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
@@ -258,34 +266,36 @@
                             android:id="@+id/textView33"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="@dimen/text_item3"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:text="*125*2*4*3#"
                             android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_8ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginStart="@dimen/_10dp"
-                        android:layout_marginEnd="@dimen/_10dp"
-                        android:background="@color/grey_10"/>
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/grey_10" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sms_100_mtn"
-                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:foreground="?selectableItemBackground">
 
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:src="@drawable/ic_phone_tel2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -296,11 +306,11 @@
                             android:id="@+id/textView40"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/text_item1"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Pack 100 SMS (3 jour)"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -308,10 +318,10 @@
                             android:id="@+id/textView42"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:text="122 FCFA"
                             android:textColor="@color/purple_500"
-                            android:textSize="@dimen/text_item2"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
@@ -319,34 +329,36 @@
                             android:id="@+id/textView43"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="@dimen/text_item3"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:text="*125*2*4*4#"
                             android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_8ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginStart="@dimen/_10dp"
-                        android:layout_marginEnd="@dimen/_10dp"
-                        android:background="@color/grey_10"/>
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/grey_10" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sms_300_mtn"
-                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:foreground="?selectableItemBackground">
 
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:src="@drawable/ic_phone_tel2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -357,11 +369,11 @@
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/text_item1"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Pack 300 SMS (5 jour)"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -369,10 +381,10 @@
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:text="335 FCFA"
                             android:textColor="@color/purple_500"
-                            android:textSize="@dimen/text_item2"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -380,34 +392,36 @@
                             android:id="@+id/textView3"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="@dimen/text_item3"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:text="*125*2*4*5#"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_8ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginStart="@dimen/_10dp"
-                        android:layout_marginEnd="@dimen/_10dp"
-                        android:background="@color/grey_10"/>
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/grey_10" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sms_500_mtn"
-                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:foreground="?selectableItemBackground">
 
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:src="@drawable/ic_phone_tel2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -418,11 +432,11 @@
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:textSize="@dimen/text_item1"
-                            android:textColor="?attr/text_color"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Pack 500 SMS (10 jour)"
+                            android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -430,10 +444,10 @@
                             android:id="@+id/textView26"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:text="507 FCFA"
                             android:textColor="@color/purple_500"
-                            android:textSize="@dimen/text_item2"
+                            android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -441,11 +455,11 @@
                             android:id="@+id/textView36"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="@dimen/text_item3"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:text="*125*2*4*6#"
                             android:textColor="?attr/text_color"
+                            android:textSize="@dimen/_8ssp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView26" />
