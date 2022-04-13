@@ -21,4 +21,8 @@
         parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/dinpro_medium</item>
     </style>
+
+    <style name="MaterialThemeDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/purple_500</item>
+    </style>
 </resources>

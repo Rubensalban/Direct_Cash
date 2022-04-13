@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
         card_trans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity(), R.style.MaterialThemeDialog);
                 String[] items = {getString(R.string.mtn_to_airtel), getString(R.string.airtel_to_mtn)};
                 alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
                     @Override
@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         card_transpro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity(), R.style.MaterialThemeDialog);
                 String[] items = {getString(R.string.cash), getString(R.string.virtuel)};
                 alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
                     @Override
@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment {
         card_forfaits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity(), R.style.MaterialThemeDialog);
                 String[] items = {getString(R.string.airtel_activation), getString(R.string.mtn_activation)};
                 alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
                     @Override

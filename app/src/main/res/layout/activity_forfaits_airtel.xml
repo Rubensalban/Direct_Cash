@@ -86,7 +86,7 @@
                             android:fontFamily="@font/dinpro_medium"
                             android:textColor="@color/red"
                             android:textSize="@dimen/_16sdp"
-                            android:text=" Credit"/>
+                            android:text=" Crédit"/>
                     </LinearLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -240,7 +240,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textSize="@dimen/_10ssp"
                             android:textColor="?attr/text_color"
-                            android:text="Pack 140 SMS (3 jour)"
+                            android:text="Pack 140 SMS (3 jours)"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -300,7 +300,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textSize="@dimen/_10ssp"
-                            android:text="Pack 350 SMS (5 jour)"
+                            android:text="Pack 350 SMS (5 jours)"
                             android:textColor="?attr/text_color"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -362,7 +362,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textSize="@dimen/_10ssp"
                             android:textColor="?attr/text_color"
-                            android:text="Pack 300 SMS (5 jour)"
+                            android:text="Pack 300 SMS (5 jours)"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -446,7 +446,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:textSize="@dimen/_10ssp"
-                            android:text="Pack 300 SMS (5 jour)"
+                            android:text="Pack 1000 SMS (1 jour)"
                             android:textColor="?attr/text_color"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -456,7 +456,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:text="335 FCFA"
+                            android:text="100 FCFA"
                             android:textColor="@color/purple_500"
                             android:textSize="@dimen/_10ssp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -469,7 +469,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:textSize="@dimen/_8ssp"
-                            android:text="*125*4*2*5#"
+                            android:text="*128*5*2*1*1#"
                             android:textColor="?attr/text_color"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,8 +30,8 @@ import java.util.ArrayList;
 
 import cg.rbns.majitechnologie.directcash.MainActivity;
 import cg.rbns.majitechnologie.directcash.R;
-import cg.rbns.majitechnologie.directcash.data.ReseauxAdapter;
-import cg.rbns.majitechnologie.directcash.data.ReseauxItem;
+import cg.rbns.majitechnologie.directcash.utilities.ReseauxAdapter;
+import cg.rbns.majitechnologie.directcash.utilities.ReseauxItem;
 
 public class MoneyShareActivity2 extends AppCompatActivity {
 
@@ -66,6 +68,8 @@ public class MoneyShareActivity2 extends AppCompatActivity {
 
         //Operator Init
         my_operator = telephonyManager.getSimOperatorName();
+        tel_1.setHint(getString(R.string.tel_06));
+        tel_2.setHint(getString(R.string.tel_06_valide));
 
         // Initialize a new list and Spinner
         mReseauxList = new ArrayList<>();
@@ -78,6 +82,15 @@ public class MoneyShareActivity2 extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 ReseauxItem selectedItemText = (ReseauxItem) adapterView.getItemAtPosition(i);
                 network = selectedItemText.toString();
+                int position = network_Spinner.getSelectedItemPosition();
+                if (position==0){
+                    tel_1.setHint(getString(R.string.tel_06));
+                    tel_2.setHint(getString(R.string.tel_06_valide));
+                }
+                if (position==1){
+                    tel_1.setHint(getString(R.string.tel_05));
+                    tel_2.setHint(getString(R.string.tel_05_valide));
+                }
             }
 
             @Override
@@ -250,7 +263,12 @@ public class MoneyShareActivity2 extends AppCompatActivity {
                         );
                         while (cursor2.moveToNext()){
                             String contact_number = cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                            setcontact(contact_number);
+                            if (network_Spinner.getSelectedItemPosition() == 0){
+                                setcontact(contact_number);
+                            }
+                            if (network_Spinner.getSelectedItemPosition() == 1) {
+                                setcontact2(contact_number);
+                            }
                         }
                         cursor2.close();
                     }
@@ -262,28 +280,92 @@ public class MoneyShareActivity2 extends AppCompatActivity {
         }
     }
 
+    private void setcontact2(String contact_number) {
+        String reset_tel = contact_number.replaceAll("\\s+", "");
+        String final_tel = "";
+        String tel = "";
+        if (reset_tel.length() ==14){
+            final_tel = reset_tel.substring(5);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("05")  | tel.equals("04")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.send_to_airtel), Toast.LENGTH_SHORT).show();
+            }
+        } else if (reset_tel.length() == 13){
+            final_tel = reset_tel.substring(4);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("05")  | tel.equals("04")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.send_to_airtel), Toast.LENGTH_SHORT).show();
+            }
+        } else if (reset_tel.length() == 9) {
+            tel = reset_tel.substring(0, 2);
+            if (tel.equals("05")  | tel.equals("04")){
+                tel_1.setText(reset_tel);
+                tel_2.setText(reset_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.send_to_airtel), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            //Toast.makeText(MoneyShareActivity.this, "Echec, verifier que tous les champs sont correct!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void setcontact(String number_trim) {
         String reset_tel = number_trim.replaceAll("\\s+", "");
         String final_tel = "";
-        if (reset_tel.length() == 14){
+        String tel = "";
+        if (reset_tel.length() ==14){
             final_tel = reset_tel.substring(5);
-            tel_1.setText(final_tel);
-            tel_2.setText(final_tel);
-            tel_price.setFocusable(true);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("06")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.send_to_mtn), Toast.LENGTH_SHORT).show();
+            }
         } else if (reset_tel.length() == 13){
             final_tel = reset_tel.substring(4);
-            tel_1.setText(final_tel);
-            tel_2.setText(final_tel);
-            tel_price.setFocusable(true);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("06")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.send_to_mtn), Toast.LENGTH_SHORT).show();
+            }
         } else if (reset_tel.length() == 9) {
-            final_tel = reset_tel.trim();
-            tel_1.setText(final_tel);
-            tel_2.setText(final_tel);
-            tel_price.setFocusable(true);
+            tel = reset_tel.substring(0, 2);
+            if (tel.equals("06")){
+                tel_1.setText(reset_tel);
+                tel_2.setText(reset_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity2.this, getString(R.string.send_to_mtn), Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(MoneyShareActivity2.this, getString(R.string.invalide_number) + reset_tel, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MoneyShareActivity2.this, "Echec, verifier que tous les champs sont correct!", Toast.LENGTH_SHORT).show();
         }
-
     }
 
 
@@ -292,7 +374,7 @@ public class MoneyShareActivity2 extends AppCompatActivity {
             if (my_dest.length() > 8 && my_confirm_dest.length() > 8) {
                 if (my_confirm_dest.equals(my_dest)){
                     int nb = Integer.parseInt(my_montant);
-                    if (nb < 49) {
+                    if (nb < 499) {
                         Toast.makeText(MoneyShareActivity2.this, getString(R.string.verify_montant), Toast.LENGTH_LONG).show();
                     } else {
                         send_sms(nb, my_confirm_dest);
@@ -308,11 +390,17 @@ public class MoneyShareActivity2 extends AppCompatActivity {
 
     private void send_sms(int nb, String my_confirm_dest) {
         Uri tel_number;
-        if (my_operator.equals("MTN-CG")){
-            tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
-        }else {
+        String phone = my_confirm_dest.substring(0,2);
+        if (phone.equals("06")){
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_airtel));
+            send(tel_number,my_confirm_dest, nb);
+        } else {
+            tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
+            send(tel_number,my_confirm_dest, nb);
         }
+    }
+
+    private void send(Uri tel_number, String my_confirm_dest, int nb) {
         String result =  my_confirm_dest + "*" + nb + "*" + my_confirm_dest;
         Intent sms_intent = new Intent(Intent.ACTION_SENDTO, tel_number);
         sms_intent.putExtra("sms_body", result);
@@ -322,12 +410,12 @@ public class MoneyShareActivity2 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         back_to_preview();
-        super.onBackPressed();
+        this.finish();
     }
 
     private void back_to_preview() {
         Intent i = new Intent(MoneyShareActivity2.this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }

@@ -73,10 +73,7 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
-                if (id == R.id.navigation_share){
-                    sms_share();
-                    return true;
-                } else if (id == R.id.navigation_share_link){
+                if (id == R.id.navigation_share_link){
                     playstore_share();
                     return true;
                 }
@@ -125,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-            String shareMessage= "Permettez-moi de vous recommander cette application\n";
+            String shareMessage= "DIRECT CASH in : Transferts Mobile money inter-réseaux !\n";
             shareMessage = shareMessage + "\nhttps://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "Partagez via"));
@@ -182,26 +179,34 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
     }
 
 
-
-
-
     private void sendto(String dest, String my_operator) {
         if (dest.length() < 9) {
             Toast.makeText(MainActivity.this, getString(R.string.msg_error), Toast.LENGTH_SHORT).show();
         } else {
-            if (my_operator.equals("MTN-CG")){
-                String result =  "info*" + dest;
-                Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_mtn));
-                Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
-                sms_intent.putExtra("sms_body", result);
-                startActivity(sms_intent);
-            } else {
-                String result =  "info*" + dest;
-                Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_airtel));
-                Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
-                sms_intent.putExtra("sms_body", result);
-                startActivity(sms_intent);
-            }
+            AlertDialog.Builder builders = new AlertDialog.Builder(MainActivity.this);
+            builders.setTitle(getString(R.string.choice_network));
+            String[] data = { getString(R.string.net_airtel), getString(R.string.net_mtn)};
+            builders.setItems(data, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    switch (i){
+                        case 0:
+                            String result =  "info*" + dest;
+                            Uri uriSms =  Uri.parse("smsto:" + getString(R.string.srv_airtel));
+                            Intent sms_intent = new Intent(Intent.ACTION_SENDTO, uriSms);
+                            sms_intent.putExtra("sms_body", result);
+                            startActivity(sms_intent);
+                            break;
+                        case 1:
+                            String results =  "info*" + dest;
+                            Uri uriSmss =  Uri.parse("smsto:" + getString(R.string.srv_mtn));
+                            Intent sms_intents = new Intent(Intent.ACTION_SENDTO, uriSmss);
+                            sms_intents.putExtra("sms_body", results);
+                            startActivity(sms_intents);
+                            break;
+                    }
+                }
+            });
         }
     }
 

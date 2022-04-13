@@ -35,11 +35,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <GridLayout
+            <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_2sdp"
-                android:columnCount="2">
+                app:rowOrderPreserved="false"
+                app:useDefaultMargins="true"
+                app:alignmentMode="alignBounds"
+                app:columnCount="2">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/home_trans"
@@ -50,7 +53,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_columnWeight="1">
+                    app:layout_columnWeight="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -82,7 +85,7 @@
                     android:layout_marginStart="@dimen/_2sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_2sdp"
-                    android:layout_columnWeight="1" >
+                    app:layout_columnWeight="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -123,7 +126,7 @@
                     android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_columnWeight="1" >
+                    app:layout_columnWeight="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -152,11 +155,11 @@
                     android:layout_width="0dp"
                     android:foreground="?selectableItemBackground"
                     android:layout_height="@dimen/_130sdp"
-                    android:layout_columnWeight="1"
                     android:layout_marginTop="@dimen/_3sdp"
                     android:layout_marginStart="@dimen/_2sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:layout_marginBottom="@dimen/_5sdp">
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:layout_columnWeight="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -180,7 +183,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-            </GridLayout>
+            </androidx.gridlayout.widget.GridLayout>
 
         </LinearLayout>
 

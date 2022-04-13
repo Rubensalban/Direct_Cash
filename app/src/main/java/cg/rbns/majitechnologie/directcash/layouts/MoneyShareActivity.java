@@ -9,7 +9,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,6 +17,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,12 +28,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import cg.rbns.majitechnologie.directcash.MainActivity;
 import cg.rbns.majitechnologie.directcash.R;
-import cg.rbns.majitechnologie.directcash.data.ReseauxAdapter;
-import cg.rbns.majitechnologie.directcash.data.ReseauxItem;
+import cg.rbns.majitechnologie.directcash.utilities.ReseauxAdapter;
+import cg.rbns.majitechnologie.directcash.utilities.ReseauxItem;
 
 public class MoneyShareActivity extends AppCompatActivity {
 
@@ -64,7 +65,11 @@ public class MoneyShareActivity extends AppCompatActivity {
         btn_tel2 = findViewById(R.id.btn_contact2);
         btn_back = findViewById(R.id.back_money);
         network_Spinner = findViewById(R.id.spinner_money);
+
+
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        tel_1.setHint(getString(R.string.tel_05));
+        tel_2.setHint(getString(R.string.tel_05_valide));
 
         // Initialize a new list and Spinner
         mReseauxList = new ArrayList<>();
@@ -77,6 +82,16 @@ public class MoneyShareActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 ReseauxItem selectedItemText = (ReseauxItem) adapterView.getItemAtPosition(i);
                 network = selectedItemText.toString();
+
+                int position = network_Spinner.getSelectedItemPosition();
+                if (position==0){
+                    tel_1.setHint(getString(R.string.tel_05));
+                    tel_2.setHint(getString(R.string.tel_05_valide));
+                }
+                if (position==1){
+                    tel_1.setHint(getString(R.string.tel_06));
+                    tel_2.setHint(getString(R.string.tel_06_valide));
+                }
             }
 
             @Override
@@ -84,6 +99,62 @@ public class MoneyShareActivity extends AppCompatActivity {
 
             }
         });
+
+        /*tel_1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().length() >= 8){
+                    String txt1 = editable.toString().substring(0, 2);
+                    if (txt1.equals("06")){
+                        network_Spinner.setSelection(0);
+                    }
+                    if (txt1.equals("04")){
+                        network_Spinner.setSelection(1);
+                    }
+                    if (txt1.equals("05")){
+                        network_Spinner.setSelection(1);
+                    }
+                }
+
+            }
+        });
+        tel_2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().length() >= 8){
+                    String txt1 = editable.toString().substring(0, 2);
+                    if (txt1.equals("06")){
+                        network_Spinner.setSelection(0);
+                    }
+                    if (txt1.equals("04")){
+                        network_Spinner.setSelection(1);
+                    }
+                    if (txt1.equals("05")){
+                        network_Spinner.setSelection(1);
+                    }
+                }
+            }
+        });*/
 
         btn_tel1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,7 +320,12 @@ public class MoneyShareActivity extends AppCompatActivity {
                         );
                         while (cursor2.moveToNext()){
                             String contact_number = cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                            setcontact(contact_number);
+                            if (network_Spinner.getSelectedItemPosition() == 0){
+                                setcontact(contact_number);
+                            }
+                            if (network_Spinner.getSelectedItemPosition() == 1) {
+                                setcontact2(contact_number);
+                            }
                         }
                         cursor2.close();
                     }
@@ -261,26 +337,91 @@ public class MoneyShareActivity extends AppCompatActivity {
         }
     }
 
+    private void setcontact2(String contact_number) {
+        String reset_tel = contact_number.replaceAll("\\s+", "");
+        String final_tel = "";
+        String tel = "";
+        if (reset_tel.length() ==14){
+            final_tel = reset_tel.substring(5);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("06")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity.this, getString(R.string.send_to_mtn), Toast.LENGTH_SHORT).show();
+            }
+        } else if (reset_tel.length() == 13){
+            final_tel = reset_tel.substring(4);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("06")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity.this, getString(R.string.send_to_mtn), Toast.LENGTH_SHORT).show();
+            }
+        } else if (reset_tel.length() == 9) {
+            tel = reset_tel.substring(0, 2);
+            if (tel.equals("06")){
+                tel_1.setText(reset_tel);
+                tel_2.setText(reset_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity.this, getString(R.string.send_to_mtn), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            //Toast.makeText(MoneyShareActivity.this, "Echec, verifier que tous les champs sont correct!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void setcontact(String number_trim) {
         String reset_tel = number_trim.replaceAll("\\s+", "");
         String final_tel = "";
-        if (reset_tel.length() == 14){
+        String tel = "";
+        if (reset_tel.length() ==14){
             final_tel = reset_tel.substring(5);
-            tel_1.setText(final_tel);
-            tel_2.setText(final_tel);
-            tel_price.setFocusable(true);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("05")  | tel.equals("04")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity.this, getString(R.string.send_to_airtel), Toast.LENGTH_SHORT).show();
+            }
         } else if (reset_tel.length() == 13){
             final_tel = reset_tel.substring(4);
-            tel_1.setText(final_tel);
-            tel_2.setText(final_tel);
-            tel_price.setFocusable(true);
+            tel = final_tel.substring(0,2);
+            if (tel.equals("05")  | tel.equals("04")){
+                tel_1.setText(final_tel);
+                tel_2.setText(final_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity.this, getString(R.string.send_to_airtel), Toast.LENGTH_SHORT).show();
+            }
         } else if (reset_tel.length() == 9) {
-            final_tel = reset_tel.trim();
-            tel_1.setText(final_tel);
-            tel_2.setText(final_tel);
-            tel_price.setFocusable(true);
+            tel = reset_tel.substring(0, 2);
+            if (tel.equals("05") | tel.equals("04")){
+                tel_1.setText(reset_tel);
+                tel_2.setText(reset_tel);
+                tel_price.setFocusable(true);
+            } else {
+                tel_1.setText("");
+                tel_2.setText("");
+                Toast.makeText(MoneyShareActivity.this, getString(R.string.send_to_airtel), Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(MoneyShareActivity.this, getString(R.string.invalide_number) + reset_tel, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MoneyShareActivity.this, "Echec, verifier que tous les champs sont correct!", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -291,7 +432,7 @@ public class MoneyShareActivity extends AppCompatActivity {
             if (my_dest.length() > 8 && my_confirm_dest.length() > 8) {
                 if (my_confirm_dest.equals(my_dest)){
                     int nb = Integer.parseInt(my_montant);
-                    if (nb < 49) {
+                    if (nb < 499) {
                         Toast.makeText(MoneyShareActivity.this, getString(R.string.verify_montant), Toast.LENGTH_LONG).show();
                     } else {
                         send_sms(nb, my_confirm_dest);
@@ -307,11 +448,18 @@ public class MoneyShareActivity extends AppCompatActivity {
 
     private void send_sms(int nb, String my_confirm_dest) {
         Uri tel_number;
-        if (my_operator.equals("MTN-CG")){
-            tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
-        }else {
+        /*int states = network_Spinner.getSelectedItemPosition();*/
+        String phone = my_confirm_dest.substring(0,2);
+        if (phone.equals("06")){
             tel_number = Uri.parse("smsto:" + getString(R.string.srv_airtel));
+            send(tel_number,my_confirm_dest, nb);
+        } else {
+            tel_number = Uri.parse("smsto:" + getString(R.string.srv_mtn));
+            send(tel_number,my_confirm_dest, nb);
         }
+    }
+
+    private void send(Uri tel_number, String my_confirm_dest, int nb) {
         String result =  my_confirm_dest + "*" + nb + "*" + my_confirm_dest;
         Intent sms_intent = new Intent(Intent.ACTION_SENDTO, tel_number);
         sms_intent.putExtra("sms_body", result);
@@ -321,12 +469,12 @@ public class MoneyShareActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         back_to_preview();
-        super.onBackPressed();
+        this.finish();
     }
 
     private void back_to_preview() {
         Intent i = new Intent(MoneyShareActivity.this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }

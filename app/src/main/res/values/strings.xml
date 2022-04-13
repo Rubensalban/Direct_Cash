@@ -23,10 +23,10 @@
     <string name="verify_desti">Echec, verifier le numéro du destinataire</string>
     <string name="verify_mtn">Echec, veuillez renseinger un destinataire MTN</string>
     <string name="verify_airtel">Echec, veuillez renseinger un destinataire</string>
-    <string name="verify_montant">Echec, veuillez renseinger un montant superieur ou egal 50 CFA</string>
+    <string name="verify_montant">Echec, veuillez renseinger un montant superieur ou egal 500 CFA</string>
     <string name="livraison_de_virtuel"><![CDATA[Livraison de Virtuel & espèces]]></string>
     <string name="trans_pro">Trans Pro \n(Transferts de proxipité)</string>
-    <string name="transferts_inter">Transferts inter-réseaux par Mobile Money</string>
+    <string name="transferts_inter">Transferts Mobile money inter-réseaux</string>
     <string name="mon_solde">Consulter mon solde</string>
     <string name="activation_de_forfaits">Activation de forfaits</string>
     <string name="a_propos">A propos</string>
@@ -34,11 +34,11 @@
     <string name="partager_par_message_prive">Partagez par message privé</string>
     <string name="transferts_intr_reseaux">Transferts inter-réseaux</string>
     <string name="operations_factures_aux_frais">Opérations facturées aux frais habituels des opérateurs</string>
-    <string name="destinataire_phone">Numéro de téléphone du destinataire</string>
-    <string name="confirm_destinataire_phone">Confirmer le numéro de téléphone du destinataire</string>
+    <string name="destinataire_phone">N° du destinataire</string>
+    <string name="confirm_destinataire_phone">Confirmer le N° du dest…</string>
     <string name="price_send_phone">Montant à envoyer</string>
     <string name="direct_seb_text">Direct Cash in vous permet de transférer directement de l\'argent par Mobile Money d\'un réseau à un autre depuis votre mobile et sans vous déplacer.</string>
-    <string name="direct_sub_text_2">Avant de cliquer sun le button valider, assurez-vous que les numéros saisis sont corrects. En cas d\'erreur de numéro, nous ne pourrons être tenu pour responsable.</string>
+    <string name="direct_sub_text_2">Avant de cliquer sur le bouton valider, assurez-vous que les numéros saisis sont corrects. En cas d\'erreur de numéro, nous ne pourrons être tenus pour responsables.</string>
     <string name="trans_pro_head">Trans Pro</string>
     <string name="transfert_money">Transferts de proximité</string>
     <string name="airtel"><font fgcolor='#E3252A'> Airtel</font></string>
@@ -59,14 +59,23 @@
     <string name="user_name">"Veuillez saisir votre nom"</string>
     <string name="user_address">Veillez indiquer votre adresse</string>
     <string name="user_price">Veillez indiquer le montant</string>
-    <string name="user_contact">Veillez indiquer numéro de téléphone</string>
+    <string name="send_to_mtn">Veillez selectionnez un numéro Mtn</string>
+    <string name="send_to_airtel">Veillez selectionnez un numéro Airtel</string>
+    <string name="user_contact">No de téléphone de téléphone</string>
+    <string name="tel_06">N° 06 du destinataire</string>
+    <string name="tel_06_valide">Confirmer le N° 06 du destinataire</string>
+    <string name="tel_05_valide">Confirmer le N° 05 du destinataire</string>
+    <string name="tel_05">N° 05 du destinataire</string>
     <string name="cash">Besoin d\'espèces</string>
     <string name="virtuel">Besoin de virtuel</string>
     <string name="numero_de_telephone_du_destinataire">Numéro de téléphone du destinataire</string>
-    <string name="nous_suivre_sur">Nous suivre sur:</string>
+    <string name="nous_suivre_sur">Nous suivre sur :</string>
     <string name="service_disponible_7_jours_7">Service disponible 7 jours / 7</string>
     <string name="airtel_to_mtn">Airtel Money vers MoMo</string>
     <string name="mtn_to_airtel">MoMo vers Airtel Money</string>
     <string name="airtel_to_mtn2">Airtel vers MTN</string>
     <string name="mtn_to_airtel2">MTN vers Airtel</string>
+    <string name="net_airtel">Airtel Congo</string>
+    <string name="net_mtn">Mtn Congo</string>
+    <string name="choice_network">Envoyer la demande via:</string>
 </resources>

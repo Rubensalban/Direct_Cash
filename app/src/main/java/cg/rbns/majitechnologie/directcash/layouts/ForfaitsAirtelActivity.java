@@ -1,7 +1,6 @@
 package cg.rbns.majitechnologie.directcash.layouts;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
@@ -12,14 +11,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 import cg.rbns.majitechnologie.directcash.MainActivity;
 import cg.rbns.majitechnologie.directcash.R;
-import cg.rbns.majitechnologie.directcash.data.ReseauxAdapter;
-import cg.rbns.majitechnologie.directcash.data.ReseauxItem;
 
 public class ForfaitsAirtelActivity extends AppCompatActivity {
     private ImageView btn_back;
@@ -168,7 +162,7 @@ public class ForfaitsAirtelActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(ForfaitsAirtelActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(ForfaitsAirtelActivity.this, new String[] {Manifest.permission.CALL_PHONE}, 1);
         } else {
-            String ussdCode = "*125*4*2*5#";
+            String ussdCode = "*128*5*2*1*1#";
             Intent intent = new Intent(Intent.ACTION_CALL);
             intent.setData(ussdToCallUri(ussdCode));
             try {
@@ -196,12 +190,12 @@ public class ForfaitsAirtelActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         back_to_preview();
-        super.onBackPressed();
+        this.finish();
     }
 
     private void back_to_preview() {
         Intent i = new Intent(ForfaitsAirtelActivity.this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }

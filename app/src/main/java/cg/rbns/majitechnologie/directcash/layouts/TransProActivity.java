@@ -6,7 +6,6 @@ import androidx.appcompat.widget.AppCompatSpinner;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.TransportInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -21,10 +20,8 @@ import java.util.ArrayList;
 
 import cg.rbns.majitechnologie.directcash.MainActivity;
 import cg.rbns.majitechnologie.directcash.R;
-import cg.rbns.majitechnologie.directcash.data.ReseauxAdapter;
-import cg.rbns.majitechnologie.directcash.data.ReseauxItem;
-import cg.rbns.majitechnologie.directcash.data.TransProAdapter;
-import cg.rbns.majitechnologie.directcash.data.TransProItem;
+import cg.rbns.majitechnologie.directcash.utilities.TransProAdapter;
+import cg.rbns.majitechnologie.directcash.utilities.TransProItem;
 
 public class TransProActivity extends AppCompatActivity {
 
@@ -155,13 +152,12 @@ public class TransProActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         back_to_preview();
-        super.onBackPressed();
+        this.finish();
     }
 
     private void back_to_preview() {
         Intent i = new Intent(TransProActivity.this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
-        finish();
     }
 }

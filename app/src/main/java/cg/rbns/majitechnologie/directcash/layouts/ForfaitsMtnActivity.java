@@ -191,12 +191,12 @@ public class ForfaitsMtnActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         back_to_preview();
-        super.onBackPressed();
+        this.finish();
     }
 
     private void back_to_preview() {
         Intent i = new Intent(ForfaitsMtnActivity.this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
     }
